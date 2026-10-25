@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07111f" />
-  <title>Hydration IQ | Interactive Concept Website</title>
-  <style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#07111f"><title>Hydration IQ — Interactive Concept</title><style>
     :root {
       --bg: #07111f;
       --bg-2: #0b1730;
@@ -571,430 +564,81 @@
       .step { grid-template-columns: 1fr; }
       .step-no { width: 48px; height: 48px; }
     }
-  </style>
-</head>
-<body>
-  <div class="bg-glow">
-    <div class="glow one"></div>
-    <div class="glow two"></div>
-    <div class="glow three"></div>
-  </div>
-
-  <header>
-    <div class="nav">
-      <a class="brand" href="#home">Hydration<span>IQ</span></a>
-      <nav class="nav-links">
-        <a href="#concept">Concept</a>
-        <a href="#experience">Experience</a>
-        <a href="#demo">Demo</a>
-        <a href="#roadmap">Roadmap</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero container" id="home">
-      <div class="reveal show">
-        <div class="eyebrow">Interactive Startup Concept</div>
-        <h1>
-          Hydration,<br>
-          <span class="gradient-text">reimagined.</span>
-        </h1>
-        <p>
-          An immersive concept website for <strong>Hydration IQ</strong> — designed to feel more like a real tech product launch. Explore the problem, the solution, and a live demo that estimates hydration-related needs based on activity and environment.
-        </p>
-        <div class="hero-actions">
-          <a href="#demo" class="btn primary">Try interactive demo</a>
-          <a href="#concept" class="btn secondary">Explore concept</a>
-        </div>
-      </div>
-
-      <div class="hero-visual-wrap reveal show">
-        <div class="hero-visual" id="heroVisual">
-          <div class="floating-card card-a">
-            <small><span class="pulse-dot"></span>Session mode</small>
-            <strong>Live</strong>
-            <span>Adaptive guidance concept</span>
-          </div>
-
-          <div class="product-ring">
-            <div class="ring-core">
-              <div>
-                <strong>HIQ</strong>
-                <span>Hydration intelligence<br>for active lives</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="floating-card card-b">
-            <small>Estimated need</small>
-            <strong>+620 mL</strong>
-            <span>Example training suggestion</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container reveal" id="concept">
-      <div class="section-head">
-        <div class="section-kicker">Explore the concept</div>
-        <h2>More than a static website.</h2>
-        <p class="lead">
-          Click each module to open a richer explanation, just like a real product showcase. This helps your Conrad Challenge website feel more polished, premium, and memorable.
-        </p>
-      </div>
-
-      <div class="cards">
-        <article class="card" data-modal="problem">
-          <div class="icon">◎</div>
-          <h3>The Problem</h3>
-          <p>Hydration guidance often ignores real training schedules, changing conditions, and individual differences.</p>
-          <div class="more">Open module →</div>
-        </article>
-
-        <article class="card" data-modal="solution">
-          <div class="icon">◇</div>
-          <h3>Our Solution</h3>
-          <p>Hydration IQ combines activity context, environment, and feedback to make reminders feel more useful.</p>
-          <div class="more">Open module →</div>
-        </article>
-
-        <article class="card" data-modal="features">
-          <div class="icon">✦</div>
-          <h3>Core Features</h3>
-          <p>Training-aware planning, interactive recommendations, session summaries, and personal history.</p>
-          <div class="more">Open module →</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container reveal" id="experience">
-      <div class="section-head">
-        <div class="section-kicker">Immersive experience</div>
-        <h2>Website modules that feel alive.</h2>
-        <p class="lead">
-          For a stronger impression, your website should let judges interact with the idea. Below is a built-in product demo that changes in real time when users switch sports or adjust training conditions.
-        </p>
-      </div>
-
-      <div class="cards">
-        <article class="card" data-modal="technology">
-          <div class="icon">⌁</div>
-          <h3>Technology</h3>
-          <p>See how wearable inputs, weather information, and behavior data could work together in a first prototype.</p>
-          <div class="more">Open module →</div>
-        </article>
-
-        <article class="card" data-modal="market">
-          <div class="icon">↗</div>
-          <h3>Target Market</h3>
-          <p>Start with student athletes and active young users, then validate expansion through testing.</p>
-          <div class="more">Open module →</div>
-        </article>
-
-        <article class="card" data-modal="roadmapInfo">
-          <div class="icon">▣</div>
-          <h3>Validation Plan</h3>
-          <p>Learn how the product could be tested through interviews, prototype trials, and feedback loops.</p>
-          <div class="more">Open module →</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container reveal" id="demo">
-      <div class="section-head">
-        <div class="section-kicker">Live interaction</div>
-        <h2>Try the Hydration IQ demo.</h2>
-        <p class="lead">
-          Try the proposed interface: select a sport, adjust your training profile and temperature, and optionally include humidity. Results are general planning prompts, not measurements of fluid loss.
-        </p>
-      </div>
-
-      <div class="demo-wrap">
-        <div class="panel">
-          <h3 class="demo-form-title">Customize Your Session</h3>
-          <div class="sport-tabs" id="sportTabs">
-            <button class="sport-btn active" type="button" data-sport="running" aria-pressed="true"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Running illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#D8F6FF"/><circle cx="29" cy="10" r="4" fill="#113E65"/><path d="M27 16l-8 7 7 5 7-4 M27 16l7 6 7 2 M26 28l-7 10-9 2 M26 28l7 9 8 2" stroke="#12608D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Running</span></button>
-            <button class="sport-btn " type="button" data-sport="tennis" aria-pressed="false"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Tennis illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#DFF5DE"/><g transform="rotate(-32 24 24)"><ellipse cx="23" cy="19" rx="10" ry="14" stroke="#1E6C55" stroke-width="3" fill="#F4FCF0"/><path d="M17 11h12M15 18h16M17 26h12M19 6v27M27 6v27" stroke="#9CCC8C" stroke-width="1"/><path d="M23 33v11" stroke="#85572F" stroke-width="4" stroke-linecap="round"/></g><circle cx="38" cy="12" r="5" fill="#C6EA43" stroke="#8FBA2C"/></svg><span>Tennis</span></button>
-            <button class="sport-btn " type="button" data-sport="soccer" aria-pressed="false"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Soccer illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#E6EEFF"/><circle cx="24" cy="24" r="16" fill="#fff" stroke="#355A82" stroke-width="1.6"/><path d="M24 16l7 5-3 8h-8l-3-8z" fill="#264B75"/><path d="M24 8v8M8 22l9-1M14 36l6-7M34 36l-6-7M40 22l-9-1" stroke="#264B75" stroke-width="2"/></svg><span>Soccer</span></button>
-            <button class="sport-btn " type="button" data-sport="gym" aria-pressed="false"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Workout illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#F1E7FF"/><path d="M10 24h28" stroke="#6852A7" stroke-width="4" stroke-linecap="round"/><rect x="9" y="17" width="6" height="14" rx="2" fill="#7153AB"/><rect x="16" y="19" width="5" height="10" rx="2" fill="#9A7BD2"/><rect x="33" y="17" width="6" height="14" rx="2" fill="#7153AB"/><rect x="27" y="19" width="5" height="10" rx="2" fill="#9A7BD2"/></svg><span>Workout</span></button>
-          </div>
-          <div class="control"><div class="control-head"><span>Session duration</span><span id="durationValue">60 min</span></div><input id="durationRange" type="range" min="20" max="150" step="5" value="60"></div>
-          <div class="control"><div class="control-head"><span>Weight <small class="optional-note">(profile only)</small></span><span id="weightValue">60 kg</span></div><input id="weightRange" type="range" min="35" max="110" step="1" value="60"></div>
-          <div class="control"><div class="control-head"><span>Height <small class="optional-note">(profile only)</small></span><span id="heightValue">165 cm</span></div><input id="heightRange" type="range" min="140" max="200" step="1" value="165"></div>
-          <div class="control"><div class="control-head"><span>Temperature</span><span id="tempValue">25°C</span></div><input id="tempRange" type="range" min="10" max="42" step="1" value="25"></div>
-          <div class="control"><div class="control-head"><label class="option-label"><input type="checkbox" id="includeHumidity"> Include humidity <small class="optional-note">(optional)</small></label><span id="humidityValue">Not included</span></div><input id="humidityRange" type="range" min="20" max="95" step="1" value="55" disabled></div>
-        </div>
-
-        <div class="panel">
-          <h3>Your Session Insights</h3>
-          <div class="results-grid">
-            <div class="stat"><div class="label">Selected activity</div><div class="value small-value" id="sportResult">Running</div></div>
-            <div class="stat"><div class="label">Body profile</div><div class="value small-value" id="bodyResult">60 kg · 165 cm</div><div class="note">Recorded for future personalization; not used to diagnose hydration.</div></div>
-            <div class="stat big-stat"><div class="label">Training conditions</div><div class="value small-value" id="conditionResult">Mild conditions</div></div>
-            <div class="stat big-stat"><div class="label">Suggested planning focus</div><div class="value small-value" id="summaryText">Routine hydration planning</div><div class="note" id="summaryNote">Keep water available and follow your thirst.</div></div>
-          </div>
-          <div class="disclaimer">
-            Concept demonstration only. The height and weight fields are for a sample profile, not a validated hydration calculation. No precise fluid loss, dehydration percentage, or medical diagnosis is provided.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container reveal" id="roadmap">
-      <div class="section-head">
-        <div class="section-kicker">Roadmap</div>
-        <h2>How the idea could evolve.</h2>
-        <p class="lead">
-          Judges usually want to see not only the idea, but how you plan to test and improve it. A clean roadmap makes your website look more serious and complete.
-        </p>
-      </div>
-
-      <div class="timeline">
-        <div class="step">
-          <div class="step-no">01</div>
-          <div>
-            <h3>User research</h3>
-            <p>Interview student athletes and active users to understand when hydration reminders actually feel useful.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-no">02</div>
-          <div>
-            <h3>Interactive prototype</h3>
-            <p>Build a testable concept with sport selection, environment inputs, and scheduling logic.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-no">03</div>
-          <div>
-            <h3>Pilot testing</h3>
-            <p>Compare training-aware reminders with fixed reminders and collect perceived usefulness and interruption data.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-no">04</div>
-          <div>
-            <h3>Iteration</h3>
-            <p>Refine the experience, clarify claims, and only strengthen the science after appropriate validation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="modal" id="modal">
-    <div class="modal-card">
-      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-      <div class="modal-kicker" id="modalKicker"></div>
-      <h3 id="modalTitle"></h3>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <script>
-    const modalContent = {
-      problem: {
-        kicker: 'The challenge',
-        title: 'The Problem',
-        body: `
-          <p>Current hydration tools often focus on general reminders or advanced sweat sensing for specific sports use. However, many people still struggle with something simpler: <strong>knowing when guidance is actually useful during real training</strong>.</p>
-          <ul>
-            <li>Training sessions may not allow water access at every moment.</li>
-            <li>Hydration needs change across temperature, humidity, and exercise type.</li>
-            <li>Users may ignore reminders that do not match their real context.</li>
-          </ul>
-          <p>Hydration IQ is meant to explore a more practical direction: adaptive guidance shaped by session context rather than generic timing alone.</p>
-        `
-      },
-      solution: {
-        kicker: 'The concept',
-        title: 'Our Solution',
-        body: `
-          <p>Hydration IQ combines activity context, environmental information, and user feedback into a more interactive planning experience.</p>
-          <ul>
-            <li><strong>Before a session:</strong> choose a sport and training duration.</li>
-            <li><strong>During a session:</strong> estimate hydration-related needs based on conditions.</li>
-            <li><strong>After a session:</strong> summarize the session and help improve future planning.</li>
-          </ul>
-          <p>The first value of the product is not claiming perfect physiological measurement — it is delivering a clearer, more useful experience.</p>
-        `
-      },
-      features: {
-        kicker: 'Inside the product',
-        title: 'Core Features',
-        body: `
-          <ul>
-            <li><strong>Sport selection:</strong> guidance changes by activity type.</li>
-            <li><strong>Interactive environment inputs:</strong> temperature and humidity influence the demo.</li>
-            <li><strong>Session summary:</strong> estimated loss and fluid suggestion after activity.</li>
-            <li><strong>Personal history direction:</strong> a path toward future personalization.</li>
-            <li><strong>Interactive website experience:</strong> product story told through clicks, motion, and live simulation.</li>
-          </ul>
-        `
-      },
-      technology: {
-        kicker: 'How it works',
-        title: 'Technology',
-        body: `
-          <p>This concept website presents a <strong>software-first</strong> approach. Instead of promising a clinically validated dehydration sensor, it demonstrates how data inputs could be combined in a future MVP.</p>
-          <ul>
-            <li>Workout type and session length</li>
-            <li>Ambient temperature and humidity</li>
-            <li>Potential heart-rate or activity information from a wearable</li>
-            <li>User-entered behavior and feedback</li>
-          </ul>
-          <p>The website is intentionally honest: it shows estimation and interaction, not direct medical measurement.</p>
-        `
-      },
-      market: {
-        kicker: 'Who it is for',
-        title: 'Target Market',
-        body: `
-          <p>The most realistic first audience is <strong>student athletes and active young users</strong>. They are easy to interview, easy to test with, and closely connected to school-based innovation programs.</p>
-          <ul>
-            <li>High school athletes</li>
-            <li>Tennis players, runners, soccer players</li>
-            <li>Recreational gym users</li>
-          </ul>
-          <p>Starting small makes the idea more believable and easier to validate.</p>
-        `
-      },
-      roadmapInfo: {
-        kicker: 'How to validate',
-        title: 'Validation Plan',
-        body: `
-          <p>A strong innovation website should also explain how the idea will be tested.</p>
-          <ul>
-            <li><strong>Interviews:</strong> learn how current hydration behavior works.</li>
-            <li><strong>Prototype tests:</strong> compare adaptive and fixed reminders.</li>
-            <li><strong>Experience evaluation:</strong> measure usefulness, clarity, and interruption level.</li>
-            <li><strong>Future science:</strong> only add stronger physiological claims after proper evidence.</li>
-          </ul>
-        `
-      }
-    };
-
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalKicker = document.getElementById('modalKicker');
-    const modalBody = document.getElementById('modalBody');
-    const modalClose = document.getElementById('modalClose');
-
-    document.querySelectorAll('[data-modal]').forEach(card => {
-      card.addEventListener('click', () => {
-        const key = card.dataset.modal;
-        const content = modalContent[key];
-        modalTitle.textContent = content.title;
-        modalKicker.textContent = content.kicker;
-        modalBody.innerHTML = content.body;
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeModal() {
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => {
-      if (e.target === modal) closeModal();
-    });
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    let currentSport = 'running';
-    const durationRange = document.getElementById('durationRange');
-    const tempRange = document.getElementById('tempRange');
-    const humidityRange = document.getElementById('humidityRange');
-    const weightRange = document.getElementById('weightRange');
-    const heightRange = document.getElementById('heightRange');
-    const includeHumidity = document.getElementById('includeHumidity');
-    const sportNames = {running:'Running',tennis:'Tennis',soccer:'Soccer',gym:'Workout'};
-
-    function updateDemo() {
-      const minutes = Number(durationRange.value);
-      const temp = Number(tempRange.value);
-      const humidity = Number(humidityRange.value);
-      const weight = Number(weightRange.value);
-      const height = Number(heightRange.value);
-      const useHumidity = includeHumidity.checked;
-      document.getElementById('durationValue').textContent = `${minutes} min`;
-      document.getElementById('tempValue').textContent = `${temp}°C`;
-      document.getElementById('weightValue').textContent = `${weight} kg`;
-      document.getElementById('heightValue').textContent = `${height} cm`;
-      document.getElementById('humidityValue').textContent = useHumidity ? `${humidity}%` : 'Not included';
-      humidityRange.disabled = !useHumidity;
-      document.getElementById('sportResult').textContent = sportNames[currentSport];
-      document.getElementById('bodyResult').textContent = `${weight} kg · ${height} cm`;
-
-      const hot = temp >= 30;
-      const veryHot = temp >= 35;
-      const humid = useHumidity && humidity >= 75;
-      const long = minutes >= 90;
-      let condition = veryHot ? 'Hot conditions' : hot ? 'Warm conditions' : 'Mild conditions';
-      if (hot && humid) condition = 'Hot and humid conditions';
-      else if (humid) condition = 'Humid conditions';
-      document.getElementById('conditionResult').textContent = condition;
-
-      let focus = 'Routine hydration planning';
-      let note = 'Keep water accessible and respond to your thirst.';
-      if (hot || long || humid) {
-        focus = 'Plan accessible water breaks';
-        note = 'Activity duration or environmental conditions may call for extra attention to water access and how you feel.';
-      }
-      if (veryHot || (hot && humid)) {
-        focus = 'Pay extra attention to heat conditions';
-        note = 'Consider rest and cooling opportunities, and monitor how you feel. This is not a dehydration diagnosis.';
-      }
-      const sportTips = {
-        running:' Plan access to water along your route.',
-        tennis:' Use permitted rest periods or changeovers.',
-        soccer:' Consider designated team water breaks.',
-        gym:' Use natural rest periods between sets.'
-      };
-      document.getElementById('summaryText').textContent = focus;
-      document.getElementById('summaryNote').textContent = note + sportTips[currentSport];
-    }
-    document.querySelectorAll('.sport-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.sport-btn').forEach(b => {
-          b.classList.remove('active'); b.setAttribute('aria-pressed','false');
-        });
-        btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
-        currentSport = btn.dataset.sport;
-        updateDemo();
-      });
-    });
-    [durationRange,tempRange,humidityRange,weightRange,heightRange].forEach(el => el.addEventListener('input',updateDemo));
-    includeHumidity.addEventListener('change',updateDemo);
-    updateDemo();
-
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
-
-    const heroVisual = document.getElementById('heroVisual');
-    heroVisual.addEventListener('mousemove', (e) => {
-      const rect = heroVisual.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const rotateY = ((x / rect.width) - 0.5) * 10;
-      const rotateX = ((y / rect.height) - 0.5) * -10;
-      heroVisual.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-    heroVisual.addEventListener('mouseleave', () => {
-      heroVisual.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-  </script>
-</body>
-</html>
+  
+.lang-picker{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.85rem}.lang-picker select{background:#10233b;color:#f4f9ff;border:1px solid #36516f;border-radius:12px;padding:9px 12px;max-width:190px;cursor:pointer}.lang-picker option{background:#10233b}.sport-btn{display:inline-flex;align-items:center;gap:7px}.sport-emoji{display:grid;place-items:center;border-radius:50%;width:35px;height:35px;font-size:20px;background:#244661}.input-meta{font-size:.8rem;color:var(--muted);margin-top:9px}.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}.details-grid button{text-align:left;cursor:pointer}.disclaimer{line-height:1.65}.pill{display:inline-block;color:var(--accent);font-size:.79rem;letter-spacing:.07em;text-transform:uppercase}.detail-body{line-height:1.85}.nav{flex-wrap:wrap}.lang-picker select:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}@media(max-width:850px){.details-grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.demo-wrap{grid-template-columns:1fr}}@media(max-width:540px){.lang-picker{width:100%}.lang-picker select{width:100%;max-width:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}</style></head><body>
+<div class="bg-glow" aria-hidden="true"><div class="glow one"></div><div class="glow two"></div></div>
+<header><div class="nav"><a class="brand" href="#home">Hydration<span>IQ</span></a><nav class="nav-links"><a href="#concept" data-i18n="more">Explore details</a><a href="#demo">Demo</a><a href="#roadmap" data-i18n="roadmap">Development Roadmap</a></nav><label class="lang-picker"><span aria-hidden="true">🌐</span><span>Language</span><select id="languageSelect" aria-label="Choose website language"><option value="en">English</option>
+<option value="zh-CN">简体中文</option>
+<option value="zh-TW">繁體中文</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+<option value="de">Deutsch</option>
+<option value="it">Italiano</option>
+<option value="pt">Português</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+<option value="ar">العربية</option>
+<option value="hi">हिन्दी</option>
+<option value="ru">Русский</option>
+<option value="tr">Türkçe</option>
+<option value="vi">Tiếng Việt</option>
+<option value="id">Bahasa Indonesia</option></select></label></div></header>
+<main>
+<section class="hero container" id="home"><div class="reveal show"><div class="eyebrow">HYDRATION IQ · INTERACTIVE CONCEPT</div><h1 class="gradient-text" data-i18n="hero">Hydration, reimagined.</h1><p data-i18n="sub">Personalized hydration planning for active lives. Explore our interactive concept.</p><div class="hero-actions"><a href="#demo" class="btn primary">Try Demo ↗</a><a href="#concept" class="btn secondary" data-i18n="more">Explore details</a></div></div><div class="hero-visual-wrap reveal show"><div class="hero-visual" id="heroVisual"><div class="product-ring"><div class="ring-core"><div><strong>HIQ</strong><span>HYDRATION IQ<br>CONCEPT</span></div></div></div><div class="floating-card card-a"><small>PROTOTYPE</small><strong>16</strong><span>Languages</span></div><div class="floating-card card-b"><small>STATUS</small><strong>Interactive</strong><span>Demo · not a medical device</span></div></div></div></section>
+<section class="section container reveal" id="concept"><div class="section-head"><div class="section-kicker">EXPLORE</div><h2 data-i18n="more">Explore details</h2><p class="lead" data-i18n="sub">Personalized hydration planning for active lives. Explore our interactive concept.</p></div><div class="details-grid">
+<button class="card detail-open" data-id="problem"><div class="icon">◎</div><h3 data-i18n="problem">The Problem</h3><p data-i18n="descP"></p><span class="more">↗</span></button>
+<button class="card detail-open" data-id="solution"><div class="icon">◇</div><h3 data-i18n="solution">Our Solution</h3><p data-i18n="descS"></p><span class="more">↗</span></button>
+<button class="card detail-open" data-id="features"><div class="icon">✦</div><h3 data-i18n="features">Core Features</h3><p data-i18n="descF"></p><span class="more">↗</span></button>
+<button class="card detail-open" data-id="technology"><div class="icon">⌁</div><h3 data-i18n="technology">Technology</h3><p data-i18n="descT"></p><span class="more">↗</span></button>
+<button class="card detail-open" data-id="market"><div class="icon">↗</div><h3 data-i18n="market">Target Market</h3><p data-i18n="descM"></p><span class="more">↗</span></button>
+<button class="card detail-open" data-id="validation"><div class="icon">▣</div><h3 data-i18n="validation">Validation Plan</h3><p data-i18n="descV"></p><span class="more">↗</span></button>
+</div></section>
+<section class="section container reveal" id="demo"><div class="section-head"><div class="section-kicker">INTERACTIVE DEMO</div><h2>Hydration IQ</h2><p class="lead" data-i18n="tip"></p></div><div class="demo-wrap"><div class="panel"><h3 data-i18n="customize">Customize Your Session</h3><div class="sport-tabs"><button class="sport-btn active" data-sport="running" aria-pressed="true"><span class="sport-emoji">🏃</span><span data-sport-name="running">Running</span></button><button class="sport-btn " data-sport="tennis" aria-pressed="false"><span class="sport-emoji">🎾</span><span data-sport-name="tennis">Tennis</span></button><button class="sport-btn " data-sport="soccer" aria-pressed="false"><span class="sport-emoji">⚽</span><span data-sport-name="soccer">Soccer</span></button><button class="sport-btn " data-sport="gym" aria-pressed="false"><span class="sport-emoji">🏋️</span><span data-sport-name="gym">Workout</span></button></div>
+<div class="control"><div class="control-head"><span data-i18n="duration">Duration</span><span id="durationLabel">60 min</span></div><input id="duration" type="range" min="20" max="150" step="5" value="60" aria-label="Duration"></div><div class="control"><div class="control-head"><span data-i18n="weight">Weight</span><span id="weightLabel">60 kg</span></div><input id="weight" type="range" min="35" max="110" step="1" value="60" aria-label="Weight"></div><div class="control"><div class="control-head"><span data-i18n="height">Height</span><span id="heightLabel">165 cm</span></div><input id="height" type="range" min="140" max="200" step="1" value="165" aria-label="Height"></div><div class="control"><div class="control-head"><span data-i18n="temp">Temperature</span><span id="tempLabel">25°C</span></div><input id="temp" type="range" min="10" max="42" step="1" value="25" aria-label="Temperature"></div>
+<div class="control"><div class="control-head"><label><input type="checkbox" id="useHumidity"> <span data-i18n="humidity">Humidity (optional)</span></label><span id="humidityLabel">—</span></div><input id="humidity" type="range" min="20" max="95" value="55" disabled></div>
+<div class="control"><div class="control-head"><label><input id="manualMode" type="checkbox"> <span data-i18n="manualMode">Use manual fluid-loss value</span></label></div></div><div class="control" id="manualLossControl" hidden><div class="control-head"><span data-i18n="loss">Example fluid loss (manual estimate)</span><span id="lossLabel">600 mL</span></div><input type="range" id="loss" min="0" max="1500" step="50" value="600"></div><div class="control"><div class="control-head"><span data-i18n="intake">Fluid consumed</span><span id="intakeLabel">200 mL</span></div><input type="range" id="intake" min="0" max="1500" step="50" value="200"></div>
+</div><div class="panel"><h3 data-i18n="insights">Your Session Insights</h3><div class="results-grid"><div class="stat big-stat"><div class="label" data-i18n="estimateLabel">Illustrative fluid replacement range</div><div class="value" id="estimatedReplacement">—</div><div class="note" data-i18n="estimateNote">Scenario illustration only; not a measured loss or an amount you must drink.</div></div><div class="stat"><div class="label" data-i18n="conditions">Training conditions</div><div class="value small-value" id="conditionsResult">Mild conditions</div></div><div class="stat"><div class="label" data-i18n="planning">Planning guidance</div><div class="note" id="adviceResult"></div></div><div class="stat big-stat"><div class="label" data-i18n="remainder">Illustrative unreplaced fluid</div><div class="value" id="remainderResult">400 mL</div><div class="note" data-i18n="notice"></div></div></div><div class="disclaimer" data-i18n="notice"></div></div></div></section>
+<section class="section container reveal" id="roadmap"><div class="section-head"><div class="section-kicker">NEXT STEPS</div><h2 data-i18n="roadmap">Development Roadmap</h2></div><div class="timeline"><div class="step"><div class="step-no">01</div><div><p data-i18n="step1"></p></div></div><div class="step"><div class="step-no">02</div><div><p data-i18n="step2"></p></div></div><div class="step"><div class="step-no">03</div><div><p data-i18n="step3"></p></div></div><div class="step"><div class="step-no">04</div><div><p data-i18n="step4"></p></div></div></div></section></main>
+<footer>Hydration IQ · Student Innovation Concept · <span data-i18n="tip"></span></footer>
+<div id="infoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="infoTitle"><div class="modal-card"><button type="button" class="modal-close" id="closeInfo" aria-label="Close">✕</button><div class="modal-kicker">HYDRATION IQ</div><h3 id="infoTitle"></h3><p class="detail-body" id="infoDescription"></p><p class="notice" id="infoNotice"></p></div></div>
+<script>const translations={"en":{"estimateLabel":"Illustrative fluid replacement range","sweatLabel":"Illustrative estimated sweat loss","manualMode":"Use manual fluid-loss value","estimateNote":"Scenario illustration only; not a measured loss or an amount you must drink.","hero":"Hydration, reimagined.","sub":"Personalized hydration planning for active lives. Explore our interactive concept.","problem":"The Problem","solution":"Our Solution","features":"Core Features","technology":"Technology","market":"Target Market","validation":"Validation Plan","descP":"Hydration needs change with training and environment; generic reminders may not fit.","descS":"Plan around sport, session length, conditions and available breaks.","descF":"Activity selection, optional humidity, fluid log and session insights.","descT":"A software-first concept using user inputs and optional wearable data.","descM":"Starting with student athletes and recreational exercisers.","descV":"Interview users, test the prototype and improve based on feedback.","customize":"Customize Your Session","insights":"Your Session Insights","duration":"Duration","weight":"Weight","height":"Height","temp":"Temperature","humidity":"Humidity (optional)","loss":"Example fluid loss (manual estimate)","intake":"Fluid consumed","remainder":"Illustrative unreplaced fluid","conditions":"Training conditions","planning":"Planning guidance","normal":"Mild conditions","warm":"Warm conditions","hot":"Hot conditions","advice":"Keep water accessible and pay attention to thirst and how you feel.","notice":"Demo only: fluid loss is entered manually. The difference is not a medical measurement or a drinking prescription.","more":"Explore details","roadmap":"Development Roadmap","step1":"Research the problem and interview users.","step2":"Build a working interactive prototype.","step3":"Compare user experiences and collect feedback.","step4":"Improve the algorithm after validation.","tip":"This is a proposed feature, not a clinically validated hydration sensor."},"zh-CN":{"estimateLabel":"示例待补充水分范围","sweatLabel":"示例预计出汗失水量","manualMode":"使用手动失水量","estimateNote":"仅为场景演示；不是实测失水，也不是必须饮用的水量。","hero":"重新定义补水。","sub":"为日常运动打造个性化补水规划。探索我们的互动产品概念。","problem":"问题所在","solution":"我们的方案","features":"核心功能","technology":"技术原理","market":"目标客户","validation":"验证计划","descP":"水分需求会随训练和环境变化，固定提醒未必合适。","descS":"结合运动类型、时长、环境和休息时间制定计划。","descF":"选择运动、可选湿度、饮水记录与训练分析。","descT":"优先开发软件，结合用户输入与可选穿戴数据。","descM":"首先面向学生运动员和日常健身人群。","descV":"采访用户、测试原型并根据反馈改进。","customize":"自定义训练","insights":"训练数据分析","duration":"时长","weight":"体重","height":"身高","temp":"温度","humidity":"湿度（可选）","loss":"示例失水量（手动估算）","intake":"训练期间饮水量","remainder":"示例未补充水量","conditions":"训练环境","planning":"补水规划建议","normal":"温和环境","warm":"温暖环境","hot":"炎热环境","advice":"确保随时能获得水，留意口渴和身体感受。","notice":"仅供演示：失水量由用户手动输入，差值不是医学测量或饮水处方。","more":"查看详情","roadmap":"研发路线","step1":"调查问题并采访用户。","step2":"开发可操作的交互原型。","step3":"比较用户体验并收集反馈。","step4":"验证后改进算法。","tip":"这是拟议功能，不是经过临床验证的水合监测器。"},"zh-TW":{"estimateLabel":"示例待補充水分範圍","sweatLabel":"示例預估流汗失水量","manualMode":"使用手動失水量","estimateNote":"僅為情境示範；並非實測失水或必須飲用的水量。","hero":"重新定義補水。","sub":"為日常運動打造個人化補水規劃。探索互動產品概念。","problem":"問題所在","solution":"我們的方案","features":"核心功能","technology":"技術原理","market":"目標客戶","validation":"驗證計畫","descP":"水分需求會隨訓練和環境改變，固定提醒未必合適。","descS":"結合運動類型、時間、環境及休息時段制定計畫。","descF":"選擇運動、可選濕度、飲水紀錄及訓練分析。","descT":"優先開發軟體，結合使用者輸入與選用穿戴資料。","descM":"首先面向學生運動員及一般健身族群。","descV":"訪談使用者、測試原型並依回饋改善。","customize":"自訂訓練","insights":"訓練數據分析","duration":"時間","weight":"體重","height":"身高","temp":"溫度","humidity":"濕度（選填）","loss":"示例失水量（手動估算）","intake":"訓練期間飲水量","remainder":"示例未補充水量","conditions":"訓練環境","planning":"補水規劃建議","normal":"溫和環境","warm":"溫暖環境","hot":"炎熱環境","advice":"確保容易取得飲水，留意口渴與身體感受。","notice":"僅供展示：失水量由使用者輸入；差值不是醫療測量或飲水處方。","more":"查看更多","roadmap":"研發路線","step1":"研究問題並訪談使用者。","step2":"製作可操作的互動原型。","step3":"比較使用體驗並蒐集回饋。","step4":"驗證後改善演算法。","tip":"此為規劃中的功能，並非經臨床驗證的水合監測器。"},"es":{"estimateLabel":"Rango ilustrativo de reposición de líquidos","sweatLabel":"Pérdida estimada de sudor (ejemplo)","manualMode":"Usar pérdida de líquido manual","estimateNote":"Solo una simulación, no una medición ni una cantidad obligatoria de bebida.","hero":"Hidratación reinventada.","sub":"Planificación personalizada para una vida activa. Explora nuestro concepto interactivo.","problem":"El problema","solution":"Nuestra solución","features":"Funciones clave","technology":"Tecnología","market":"Público objetivo","validation":"Plan de validación","descP":"Las necesidades cambian con el ejercicio y el entorno; los avisos genéricos pueden fallar.","descS":"Planifica según deporte, duración, condiciones y descansos disponibles.","descF":"Deporte, humedad opcional, registro de bebidas y resumen de la sesión.","descT":"Concepto centrado en software, con datos del usuario y de dispositivos opcionales.","descM":"Empezamos con estudiantes deportistas y aficionados al ejercicio.","descV":"Entrevistar usuarios, probar el prototipo y mejorarlo con comentarios.","customize":"Personaliza tu sesión","insights":"Resumen de la sesión","duration":"Duración","weight":"Peso","height":"Altura","temp":"Temperatura","humidity":"Humedad (opcional)","loss":"Pérdida estimada (manual)","intake":"Líquidos consumidos","remainder":"Diferencia de líquidos ilustrativa","conditions":"Condiciones","planning":"Orientación","normal":"Condiciones suaves","warm":"Condiciones cálidas","hot":"Condiciones calurosas","advice":"Ten agua disponible y presta atención a la sed y a cómo te sientes.","notice":"Solo demostración: la pérdida se introduce manualmente. La diferencia no es una medición médica ni una prescripción.","more":"Ver detalles","roadmap":"Hoja de ruta","step1":"Investigar y entrevistar a usuarios.","step2":"Crear un prototipo interactivo.","step3":"Comparar experiencias y recopilar opiniones.","step4":"Mejorar el algoritmo tras validarlo.","tip":"Es una función propuesta, no un sensor clínicamente validado."},"fr":{"estimateLabel":"Fourchette indicative de remplacement hydrique","sweatLabel":"Perte de sueur estimée (exemple)","manualMode":"Saisir la perte manuellement","estimateNote":"Simulation uniquement : ni mesure réelle, ni quantité à boire prescrite.","hero":"Hydratation réinventée.","sub":"Une planification personnalisée pour une vie active. Découvrez notre concept interactif.","problem":"Le problème","solution":"Notre solution","features":"Fonctions clés","technology":"Technologie","market":"Public cible","validation":"Plan de validation","descP":"Les besoins varient selon l’effort et l’environnement ; les rappels génériques ne conviennent pas toujours.","descS":"Planifier selon le sport, la durée, les conditions et les pauses possibles.","descF":"Choix du sport, humidité facultative, boissons et bilan de séance.","descT":"Concept logiciel utilisant les données saisies et, si disponible, celles d’un appareil connecté.","descM":"Nous ciblons d’abord les élèves sportifs et les pratiquants amateurs.","descV":"Interroger des utilisateurs, tester le prototype et l’améliorer.","customize":"Personnalisez la séance","insights":"Résumé de séance","duration":"Durée","weight":"Poids","height":"Taille","temp":"Température","humidity":"Humidité (facultative)","loss":"Perte estimée (saisie manuelle)","intake":"Liquides consommés","remainder":"Différence de liquides illustrative","conditions":"Conditions","planning":"Conseil de planification","normal":"Conditions modérées","warm":"Conditions chaudes","hot":"Forte chaleur","advice":"Gardez de l’eau à portée de main et écoutez votre soif et vos sensations.","notice":"Démonstration uniquement : perte saisie manuellement. Ce calcul n’est ni une mesure médicale ni une prescription.","more":"Voir les détails","roadmap":"Feuille de route","step1":"Étudier le problème et interroger les utilisateurs.","step2":"Créer un prototype interactif.","step3":"Comparer les expériences et recueillir les avis.","step4":"Améliorer l’algorithme après validation.","tip":"Fonction envisagée, pas un capteur d’hydratation validé cliniquement."},"de":{"estimateLabel":"Beispielhafter Flüssigkeitsersatzbereich","sweatLabel":"Geschätzter Schweißverlust (Beispiel)","manualMode":"Flüssigkeitsverlust manuell eingeben","estimateNote":"Nur eine Simulation, keine Messung oder vorgeschriebene Trinkmenge.","hero":"Hydration neu gedacht.","sub":"Individuelle Trinkplanung für einen aktiven Alltag. Entdecke unser interaktives Konzept.","problem":"Das Problem","solution":"Unsere Lösung","features":"Kernfunktionen","technology":"Technologie","market":"Zielgruppe","validation":"Validierungsplan","descP":"Der Bedarf variiert je nach Training und Umgebung; allgemeine Erinnerungen passen nicht immer.","descS":"Plane nach Sportart, Dauer, Bedingungen und verfügbaren Pausen.","descF":"Sportauswahl, optionale Luftfeuchte, Getränkeprotokoll und Sitzungsübersicht.","descT":"Softwareorientiertes Konzept mit Eingaben und optionalen Wearable-Daten.","descM":"Zunächst für Schulsportler und Freizeitsportler.","descV":"Nutzer befragen, Prototyp testen und anhand von Feedback verbessern.","customize":"Training anpassen","insights":"Trainingsübersicht","duration":"Dauer","weight":"Gewicht","height":"Größe","temp":"Temperatur","humidity":"Luftfeuchte (optional)","loss":"Geschätzter Verlust (manuell)","intake":"Getrunkene Flüssigkeit","remainder":"Beispielhafte Flüssigkeitsdifferenz","conditions":"Bedingungen","planning":"Planungshinweis","normal":"Milde Bedingungen","warm":"Warme Bedingungen","hot":"Heiße Bedingungen","advice":"Halte Wasser bereit und achte auf Durst und Wohlbefinden.","notice":"Nur Demo: Verlust wird manuell eingegeben. Die Differenz ist keine medizinische Messung oder Trinkvorgabe.","more":"Details ansehen","roadmap":"Entwicklungsplan","step1":"Problem untersuchen und Nutzer befragen.","step2":"Interaktiven Prototyp entwickeln.","step3":"Erfahrungen vergleichen und Feedback sammeln.","step4":"Algorithmus nach Validierung verbessern.","tip":"Geplante Funktion, kein klinisch validierter Hydrationssensor."},"it":{"estimateLabel":"Intervallo indicativo di reintegro dei liquidi","sweatLabel":"Perdita di sudore stimata (esempio)","manualMode":"Inserisci perdita manualmente","estimateNote":"Solo simulazione: non è una misurazione né una quantità da bere obbligatoria.","hero":"Idratazione reinventata.","sub":"Pianificazione personalizzata per una vita attiva. Scopri il nostro concetto interattivo.","problem":"Il problema","solution":"La nostra soluzione","features":"Funzioni principali","technology":"Tecnologia","market":"Utenti target","validation":"Piano di validazione","descP":"Le esigenze cambiano con allenamento e ambiente; i promemoria generici non sempre funzionano.","descS":"Pianifica in base a sport, durata, condizioni e pause disponibili.","descF":"Sport, umidità opzionale, registro bevande e riepilogo sessione.","descT":"Concetto software con input personali e dati wearable opzionali.","descM":"Partiamo da studenti atleti e sportivi amatoriali.","descV":"Intervistare utenti, testare il prototipo e migliorarlo.","customize":"Personalizza la sessione","insights":"Riepilogo sessione","duration":"Durata","weight":"Peso","height":"Altezza","temp":"Temperatura","humidity":"Umidità (opzionale)","loss":"Perdita stimata (manuale)","intake":"Liquidi consumati","remainder":"Differenza illustrativa di liquidi","conditions":"Condizioni","planning":"Consigli di pianificazione","normal":"Condizioni miti","warm":"Condizioni calde","hot":"Condizioni molto calde","advice":"Tieni acqua disponibile e presta attenzione alla sete e alle tue sensazioni.","notice":"Solo demo: la perdita è inserita manualmente. La differenza non è una misura medica né una prescrizione.","more":"Vedi dettagli","roadmap":"Piano di sviluppo","step1":"Studiare il problema e intervistare gli utenti.","step2":"Creare un prototipo interattivo.","step3":"Confrontare esperienze e raccogliere feedback.","step4":"Migliorare l’algoritmo dopo la validazione.","tip":"Funzione proposta, non sensore clinicamente validato."},"pt":{"estimateLabel":"Faixa ilustrativa de reposição de líquidos","sweatLabel":"Perda de suor estimada (exemplo)","manualMode":"Inserir perda manualmente","estimateNote":"Apenas demonstração, não é medição nem quantidade obrigatória para beber.","hero":"Hidratação reinventada.","sub":"Planejamento personalizado para uma vida ativa. Explore nosso conceito interativo.","problem":"O problema","solution":"Nossa solução","features":"Recursos principais","technology":"Tecnologia","market":"Público-alvo","validation":"Plano de validação","descP":"As necessidades mudam com o treino e o ambiente; alertas genéricos podem falhar.","descS":"Planeje por esporte, duração, condições e pausas disponíveis.","descF":"Esporte, umidade opcional, registro de líquidos e resumo da sessão.","descT":"Conceito baseado em software com dados do usuário e de vestíveis opcionais.","descM":"Inicialmente estudantes atletas e praticantes recreativos.","descV":"Entrevistar usuários, testar o protótipo e melhorar com feedback.","customize":"Personalize sua sessão","insights":"Resumo da sessão","duration":"Duração","weight":"Peso","height":"Altura","temp":"Temperatura","humidity":"Umidade (opcional)","loss":"Perda estimada (manual)","intake":"Líquidos consumidos","remainder":"Diferença ilustrativa de líquidos","conditions":"Condições","planning":"Orientação de planejamento","normal":"Condições amenas","warm":"Condições quentes","hot":"Calor intenso","advice":"Tenha água disponível e preste atenção à sede e ao seu bem-estar.","notice":"Apenas demonstração: a perda é inserida manualmente. A diferença não é medição médica nem prescrição.","more":"Ver detalhes","roadmap":"Roteiro de desenvolvimento","step1":"Pesquisar e entrevistar usuários.","step2":"Criar um protótipo interativo.","step3":"Comparar experiências e coletar opiniões.","step4":"Melhorar o algoritmo após validação.","tip":"Recurso proposto, não sensor validado clinicamente."},"ja":{"estimateLabel":"補水量の参考範囲（デモ）","sweatLabel":"推定発汗量（デモ）","manualMode":"水分損失を手動入力","estimateNote":"参考表示のみ。実測値や必要な飲水量ではありません。","hero":"水分補給を、もっとスマートに。","sub":"アクティブな毎日のための個別水分補給プラン。体験デモをご覧ください。","problem":"課題","solution":"私たちの解決策","features":"主な機能","technology":"技術","market":"対象ユーザー","validation":"検証計画","descP":"水分需要は運動や環境で変化し、一定間隔の通知は適切とは限りません。","descS":"競技、時間、環境、休憩に合わせて計画します。","descF":"競技選択、任意の湿度、飲水記録、セッション分析。","descT":"入力データと任意のウェアラブル情報を使うソフトウェア中心の構想。","descM":"まず学生アスリートと一般の運動愛好家を対象にします。","descV":"利用者に聞き、試作品を試し、意見をもとに改善します。","customize":"セッションを設定","insights":"セッション分析","duration":"時間","weight":"体重","height":"身長","temp":"気温","humidity":"湿度（任意）","loss":"推定水分損失（手入力）","intake":"運動中の飲水量","remainder":"未補給水分の例示値","conditions":"運動環境","planning":"補水計画のヒント","normal":"穏やかな環境","warm":"暖かい環境","hot":"暑い環境","advice":"水を利用できるようにし、のどの渇きや体調に注意してください。","notice":"デモ専用：水分損失は手入力です。差分は医学的測定でも飲水指示でもありません。","more":"詳細を見る","roadmap":"開発計画","step1":"課題を調べ利用者に聞く。","step2":"操作可能な試作品を作る。","step3":"体験を比較し意見を集める。","step4":"検証後にアルゴリズムを改善する。","tip":"提案段階の機能であり、臨床的に検証されたセンサーではありません。"},"ko":{"estimateLabel":"예시 수분 보충 범위","sweatLabel":"예상 땀 손실량(예시)","manualMode":"수분 손실량 직접 입력","estimateNote":"시연용이며 실제 측정값이나 반드시 마셔야 할 양이 아닙니다.","hero":"수분 보충을 새롭게.","sub":"활동적인 일상을 위한 맞춤형 수분 관리. 인터랙티브 콘셉트를 살펴보세요.","problem":"문제점","solution":"우리의 솔루션","features":"주요 기능","technology":"기술","market":"대상 고객","validation":"검증 계획","descP":"수분 요구는 운동과 환경에 따라 달라져 일률적인 알림이 맞지 않을 수 있습니다.","descS":"운동 종목, 시간, 환경, 휴식 시간을 고려해 계획합니다.","descF":"운동 선택, 선택적 습도, 음료 기록, 세션 분석.","descT":"사용자 입력과 선택적 웨어러블 데이터를 활용하는 소프트웨어 중심 구상.","descM":"우선 학생 운동선수와 생활 체육인을 대상으로 합니다.","descV":"사용자 인터뷰, 시제품 테스트, 피드백 기반 개선.","customize":"운동 설정","insights":"세션 분석","duration":"운동 시간","weight":"체중","height":"키","temp":"기온","humidity":"습도(선택)","loss":"예시 수분 손실(직접 입력)","intake":"운동 중 섭취한 수분","remainder":"미보충 수분 예시","conditions":"운동 환경","planning":"수분 계획 안내","normal":"온화한 환경","warm":"따뜻한 환경","hot":"더운 환경","advice":"물을 쉽게 구할 수 있도록 하고 갈증과 몸 상태를 살피세요.","notice":"시연용: 손실량은 직접 입력합니다. 차이는 의학적 측정이나 음수 처방이 아닙니다.","more":"자세히 보기","roadmap":"개발 로드맵","step1":"문제를 조사하고 사용자 인터뷰.","step2":"인터랙티브 시제품 제작.","step3":"사용 경험 비교 및 의견 수집.","step4":"검증 후 알고리즘 개선.","tip":"제안된 기능이며 임상 검증된 센서가 아닙니다."},"ar":{"estimateLabel":"نطاق تعويض السوائل التوضيحي","sweatLabel":"فقدان العرق المقدّر (توضيحي)","manualMode":"استخدام قيمة يدوية لفقدان السوائل","estimateNote":"محاكاة فقط؛ ليس قياسًا حقيقيًا ولا كمية شرب إلزامية.","hero":"الترطيب بطريقة جديدة.","sub":"تخطيط شخصي للترطيب أثناء الحياة النشطة. استكشف النموذج التفاعلي.","problem":"المشكلة","solution":"حلّنا","features":"الميزات الأساسية","technology":"التقنية","market":"العملاء المستهدفون","validation":"خطة التحقق","descP":"تختلف احتياجات السوائل حسب النشاط والبيئة، وقد لا تناسب التنبيهات العامة الجميع.","descS":"خطّط حسب الرياضة والمدة والظروف وفترات الراحة المتاحة.","descF":"اختيار الرياضة والرطوبة الاختيارية وسجل الشرب وملخص الجلسة.","descT":"فكرة تعتمد على البرمجيات ومدخلات المستخدم وبيانات الأجهزة الاختيارية.","descM":"نبدأ بالطلاب الرياضيين وممارسي الرياضة للهواية.","descV":"مقابلة المستخدمين واختبار النموذج وتحسينه من الملاحظات.","customize":"تخصيص الجلسة","insights":"ملخص الجلسة","duration":"المدة","weight":"الوزن","height":"الطول","temp":"الحرارة","humidity":"الرطوبة (اختياري)","loss":"فقدان السوائل التقديري (إدخال يدوي)","intake":"السوائل المستهلكة","remainder":"الفرق التوضيحي في السوائل","conditions":"ظروف التدريب","planning":"إرشادات التخطيط","normal":"ظروف معتدلة","warm":"ظروف دافئة","hot":"ظروف حارة","advice":"أبقِ الماء متاحًا وانتبه للعطش وكيف تشعر.","notice":"للعرض فقط: يتم إدخال الفقدان يدويًا. الفرق ليس قياسًا طبيًا أو وصفة للشرب.","more":"عرض التفاصيل","roadmap":"خطة التطوير","step1":"بحث المشكلة ومقابلة المستخدمين.","step2":"إنشاء نموذج تفاعلي يعمل.","step3":"مقارنة التجارب وجمع الملاحظات.","step4":"تحسين الخوارزمية بعد التحقق.","tip":"هذه ميزة مقترحة وليست مستشعرًا معتمدًا طبيًا."},"hi":{"estimateLabel":"अनुमानित तरल पूर्ति सीमा (डेमो)","sweatLabel":"पसीने की अनुमानित हानि (डेमो)","manualMode":"तरल हानि मैन्युअल दर्ज करें","estimateNote":"केवल उदाहरण; न वास्तविक माप न पीने की अनिवार्य मात्रा।","hero":"हाइड्रेशन का नया तरीका।","sub":"सक्रिय जीवन के लिए व्यक्तिगत पानी पीने की योजना। इंटरैक्टिव कॉन्सेप्ट देखें।","problem":"समस्या","solution":"हमारा समाधान","features":"मुख्य सुविधाएँ","technology":"तकनीक","market":"लक्षित ग्राहक","validation":"परीक्षण योजना","descP":"व्यायाम और वातावरण के साथ पानी की ज़रूरत बदलती है; सामान्य रिमाइंडर हमेशा उपयोगी नहीं होते।","descS":"खेल, समय, मौसम और उपलब्ध ब्रेक के अनुसार योजना बनाएँ।","descF":"खेल चयन, वैकल्पिक नमी, पानी का रिकॉर्ड और सत्र विश्लेषण।","descT":"उपयोगकर्ता के इनपुट और वैकल्पिक वियरेबल डेटा पर आधारित सॉफ़्टवेयर मॉडल।","descM":"पहले छात्र खिलाड़ियों और सामान्य व्यायाम करने वालों के लिए।","descV":"उपयोगकर्ताओं से बातचीत, प्रोटोटाइप परीक्षण और सुधार।","customize":"अपना सत्र चुनें","insights":"सत्र की जानकारी","duration":"अवधि","weight":"वज़न","height":"लंबाई","temp":"तापमान","humidity":"नमी (वैकल्पिक)","loss":"अनुमानित पानी की कमी (मैनुअल)","intake":"पिया गया तरल","remainder":"उदाहरण: शेष तरल अंतर","conditions":"परिस्थितियाँ","planning":"योजना संबंधी सुझाव","normal":"सामान्य मौसम","warm":"गर्म मौसम","hot":"बहुत गर्म मौसम","advice":"पानी उपलब्ध रखें और प्यास व अपनी स्थिति पर ध्यान दें।","notice":"केवल डेमो: हानि की मात्रा हाथ से भरी जाती है। अंतर चिकित्सकीय माप या पीने का निर्देश नहीं है।","more":"विवरण देखें","roadmap":"विकास योजना","step1":"समस्या पर शोध और साक्षात्कार।","step2":"इंटरैक्टिव प्रोटोटाइप बनाएँ।","step3":"अनुभवों की तुलना और प्रतिक्रिया लें।","step4":"सत्यापन के बाद एल्गोरिदम सुधारें।","tip":"यह प्रस्तावित सुविधा है, चिकित्सकीय रूप से प्रमाणित सेंसर नहीं।"},"ru":{"estimateLabel":"Примерный диапазон восполнения жидкости","sweatLabel":"Расчётная потеря пота (пример)","manualMode":"Ввести потерю жидкости вручную","estimateNote":"Только демонстрация, не измерение и не предписание пить.","hero":"Гидратация по-новому.","sub":"Персональное планирование питьевого режима для активной жизни. Изучите интерактивную концепцию.","problem":"Проблема","solution":"Наше решение","features":"Основные функции","technology":"Технология","market":"Целевая аудитория","validation":"План проверки","descP":"Потребность в жидкости меняется при нагрузке и смене условий; общие напоминания подходят не всем.","descS":"Учитывайте спорт, продолжительность, условия и доступные перерывы.","descF":"Выбор спорта, влажность по желанию, учет напитков и итог сессии.","descT":"Программная концепция с вводом данных и возможной интеграцией носимых устройств.","descM":"Сначала для школьных спортсменов и любителей спорта.","descV":"Интервью с пользователями, тестирование прототипа и улучшение по отзывам.","customize":"Настройка тренировки","insights":"Итоги тренировки","duration":"Продолжительность","weight":"Вес","height":"Рост","temp":"Температура","humidity":"Влажность (необязательно)","loss":"Пример потери жидкости (ввод вручную)","intake":"Выпито за тренировку","remainder":"Примерная разница жидкости","conditions":"Условия","planning":"Рекомендации по планированию","normal":"Умеренные условия","warm":"Теплые условия","hot":"Жаркие условия","advice":"Держите воду доступной и следите за жаждой и самочувствием.","notice":"Только демонстрация: потеря вводится вручную. Разница не является медицинским измерением или назначением.","more":"Подробнее","roadmap":"План разработки","step1":"Исследовать проблему и опросить пользователей.","step2":"Создать интерактивный прототип.","step3":"Сравнить опыт и собрать отзывы.","step4":"Улучшить алгоритм после проверки.","tip":"Предлагаемая функция, а не клинически проверенный датчик."},"tr":{"estimateLabel":"Örnek sıvı telafi aralığı","sweatLabel":"Tahmini ter kaybı (örnek)","manualMode":"Sıvı kaybını elle gir","estimateNote":"Yalnızca örnek; ölçüm veya zorunlu içme miktarı değildir.","hero":"Hidrasyonu yeniden düşünün.","sub":"Aktif yaşam için kişiselleştirilmiş sıvı planlaması. Etkileşimli konsepti keşfedin.","problem":"Sorun","solution":"Çözümümüz","features":"Temel özellikler","technology":"Teknoloji","market":"Hedef kitle","validation":"Doğrulama planı","descP":"Sıvı ihtiyacı antrenmana ve ortama göre değişir; genel hatırlatmalar her zaman uygun olmayabilir.","descS":"Spor, süre, koşullar ve mevcut molalara göre plan yapın.","descF":"Spor seçimi, isteğe bağlı nem, içecek kaydı ve oturum özeti.","descT":"Kullanıcı girdileri ve isteğe bağlı giyilebilir verileri kullanan yazılım konsepti.","descM":"Öncelikle öğrenci sporcular ve amatör spor yapanlar.","descV":"Kullanıcılarla görüşün, prototipi test edin ve geri bildirimle geliştirin.","customize":"Oturumunu özelleştir","insights":"Oturum bilgileri","duration":"Süre","weight":"Kilo","height":"Boy","temp":"Sıcaklık","humidity":"Nem (isteğe bağlı)","loss":"Örnek sıvı kaybı (elle giriş)","intake":"Tüketilen sıvı","remainder":"Örnek sıvı farkı","conditions":"Koşullar","planning":"Planlama önerisi","normal":"Ilıman koşullar","warm":"Sıcak koşullar","hot":"Çok sıcak koşullar","advice":"Suyu erişilebilir tutun; susuzluğunuza ve nasıl hissettiğinize dikkat edin.","notice":"Yalnızca demo: kayıp elle girilir. Fark tıbbi ölçüm veya içme talimatı değildir.","more":"Detaylar","roadmap":"Geliştirme planı","step1":"Sorunu araştırın ve kullanıcılarla görüşün.","step2":"Etkileşimli prototip oluşturun.","step3":"Deneyimleri karşılaştırıp görüş toplayın.","step4":"Doğrulamadan sonra algoritmayı geliştirin.","tip":"Bu önerilen bir özellik olup klinik olarak doğrulanmış sensör değildir."},"vi":{"estimateLabel":"Khoảng bù nước minh họa","sweatLabel":"Lượng mồ hôi ước tính (ví dụ)","manualMode":"Nhập lượng nước mất thủ công","estimateNote":"Chỉ mô phỏng, không phải số đo hay lượng nước bắt buộc phải uống.","hero":"Bù nước theo cách mới.","sub":"Lập kế hoạch bổ sung nước cá nhân hóa cho cuộc sống năng động. Khám phá bản demo tương tác.","problem":"Vấn đề","solution":"Giải pháp","features":"Tính năng chính","technology":"Công nghệ","market":"Khách hàng mục tiêu","validation":"Kế hoạch kiểm chứng","descP":"Nhu cầu nước thay đổi theo hoạt động và môi trường; nhắc nhở cố định có thể không phù hợp.","descS":"Lập kế hoạch theo môn thể thao, thời gian, điều kiện và giờ nghỉ.","descF":"Chọn môn, độ ẩm tùy chọn, nhật ký uống nước và tổng kết buổi tập.","descT":"Ý tưởng ưu tiên phần mềm, dùng dữ liệu nhập và thiết bị đeo tùy chọn.","descM":"Ban đầu dành cho học sinh chơi thể thao và người tập luyện giải trí.","descV":"Phỏng vấn người dùng, thử nguyên mẫu và cải thiện từ phản hồi.","customize":"Tùy chỉnh buổi tập","insights":"Thông tin buổi tập","duration":"Thời lượng","weight":"Cân nặng","height":"Chiều cao","temp":"Nhiệt độ","humidity":"Độ ẩm (tùy chọn)","loss":"Lượng nước mất ví dụ (nhập tay)","intake":"Lượng nước đã uống","remainder":"Chênh lệch nước minh họa","conditions":"Điều kiện","planning":"Gợi ý lập kế hoạch","normal":"Điều kiện ôn hòa","warm":"Điều kiện ấm","hot":"Điều kiện nóng","advice":"Luôn có sẵn nước và chú ý cảm giác khát cũng như tình trạng cơ thể.","notice":"Chỉ là bản demo: lượng mất được nhập tay. Chênh lệch không phải phép đo y tế hay đơn uống nước.","more":"Xem chi tiết","roadmap":"Lộ trình phát triển","step1":"Nghiên cứu vấn đề và phỏng vấn người dùng.","step2":"Xây dựng nguyên mẫu tương tác.","step3":"So sánh trải nghiệm và thu thập phản hồi.","step4":"Cải thiện thuật toán sau kiểm chứng.","tip":"Đây là tính năng đề xuất, chưa phải cảm biến được kiểm chứng lâm sàng."},"id":{"estimateLabel":"Rentang penggantian cairan ilustratif","sweatLabel":"Perkiraan kehilangan keringat (contoh)","manualMode":"Masukkan kehilangan cairan manual","estimateNote":"Hanya simulasi, bukan pengukuran atau jumlah wajib diminum.","hero":"Hidrasi dengan cara baru.","sub":"Perencanaan hidrasi personal untuk hidup aktif. Jelajahi konsep interaktif kami.","problem":"Masalah","solution":"Solusi kami","features":"Fitur utama","technology":"Teknologi","market":"Target pelanggan","validation":"Rencana validasi","descP":"Kebutuhan cairan berubah sesuai latihan dan lingkungan; pengingat umum belum tentu cocok.","descS":"Rencanakan sesuai olahraga, durasi, kondisi, dan waktu istirahat.","descF":"Pilih olahraga, kelembapan opsional, catatan minum, dan ringkasan sesi.","descT":"Konsep berbasis perangkat lunak dengan masukan pengguna dan data wearable opsional.","descM":"Awalnya bagi atlet pelajar dan penggemar olahraga.","descV":"Wawancara pengguna, uji prototipe, dan perbaiki dari masukan.","customize":"Atur sesi latihan","insights":"Ringkasan sesi","duration":"Durasi","weight":"Berat","height":"Tinggi","temp":"Suhu","humidity":"Kelembapan (opsional)","loss":"Contoh cairan hilang (input manual)","intake":"Cairan yang diminum","remainder":"Selisih cairan ilustratif","conditions":"Kondisi","planning":"Panduan perencanaan","normal":"Kondisi sejuk","warm":"Kondisi hangat","hot":"Kondisi panas","advice":"Sediakan air dan perhatikan rasa haus serta kondisi tubuh.","notice":"Hanya demo: kehilangan cairan dimasukkan manual. Selisih bukan pengukuran medis atau resep minum.","more":"Lihat detail","roadmap":"Peta pengembangan","step1":"Teliti masalah dan wawancarai pengguna.","step2":"Buat prototipe interaktif.","step3":"Bandingkan pengalaman dan kumpulkan masukan.","step4":"Perbaiki algoritme setelah validasi.","tip":"Fitur yang diusulkan, bukan sensor teruji klinis."}};
+const sportTranslations={en:['Running','Tennis','Soccer','Workout'], 'zh-CN':['跑步','网球','足球','健身'], 'zh-TW':['跑步','網球','足球','健身'],es:['Correr','Tenis','Fútbol','Entrenamiento'],fr:['Course','Tennis','Football','Musculation'],de:['Laufen','Tennis','Fußball','Training'],it:['Corsa','Tennis','Calcio','Allenamento'],pt:['Corrida','Tênis','Futebol','Treino'],ja:['ランニング','テニス','サッカー','運動'],ko:['달리기','테니스','축구','운동'],ar:['الجري','التنس','كرة القدم','التمرين'],hi:['दौड़','टेनिस','फ़ुटबॉल','व्यायाम'],ru:['Бег','Теннис','Футбол','Тренировка'],tr:['Koşu','Tenis','Futbol','Antrenman'],vi:['Chạy bộ','Quần vợt','Bóng đá','Tập luyện'],id:['Lari','Tenis','Sepak bola','Latihan']};
+let currentLang='en';let currentSport='running';let activeDetail=null;const ids=['running','tennis','soccer','gym'];
+function t(key){return (translations[currentLang]&&translations[currentLang][key])||translations.en[key]||key;}
+function renderAll(){document.documentElement.lang=currentLang;document.documentElement.dir=currentLang==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));document.querySelectorAll('[data-sport-name]').forEach(el=>{el.textContent=(sportTranslations[currentLang]||sportTranslations.en)[ids.indexOf(el.dataset.sportName)]});document.title='Hydration IQ — '+t('hero');updateDemo();if(activeDetail)openDetail(activeDetail);}
+const langSelect=document.getElementById('languageSelect');langSelect.addEventListener('change',()=>{currentLang=langSelect.value;renderAll();});
+const sliders=['duration','weight','height','temp','humidity','loss','intake'];sliders.forEach(id=>document.getElementById(id).addEventListener('input',updateDemo));document.getElementById('useHumidity').addEventListener('change',updateDemo);
+document.querySelectorAll('[data-sport]').forEach(btn=>btn.addEventListener('click',()=>{currentSport=btn.dataset.sport;document.querySelectorAll('[data-sport]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});updateDemo()}));
+function updateDemo(){
+  const data={}; sliders.forEach(id=>data[id]=Number(document.getElementById(id).value));
+  for(const id of sliders){const unit=id==='duration'?' min':id==='weight'?' kg':id==='height'?' cm':id==='temp'?'°C':id==='humidity'?'%':' mL';document.getElementById(id+'Label').textContent=data[id]+unit;}
+  const enabled=document.getElementById('useHumidity').checked;
+  document.getElementById('humidity').disabled=!enabled;
+  document.getElementById('humidityLabel').textContent=enabled?data.humidity+'%':'—';
+  const manual=document.getElementById('manualMode').checked;
+  document.getElementById('manualLossControl').hidden=!manual;
+  // Illustrative sport-dependent assumptions, deliberately NOT a validated model.
+  // The ±40% interval signals high uncertainty instead of false precision.
+  const rates={running:0.65,tennis:0.55,soccer:0.70,gym:0.45};
+  const temperatureFactor=1+Math.max(0,data.temp-22)*0.012;
+  const humidityFactor=enabled?1+Math.max(0,data.humidity-60)*0.002:1;
+  const center=manual?data.loss:(rates[currentSport]*data.duration/60*temperatureFactor*humidityFactor*1000);
+  const minLoss=manual?center:0.6*center;
+  const maxLoss=manual?center:1.4*center;
+  const low=Math.max(0,Math.round((minLoss-data.intake)/50)*50);
+  const high=Math.max(0,Math.round((maxLoss-data.intake)/50)*50);
+  document.getElementById('estimatedReplacement').textContent=low===high?low+' mL':low+'–'+high+' mL';
+  // Previous manually-entered calculation remains available in manual mode.
+  document.getElementById('remainderResult').textContent=(manual?Math.max(0,data.loss-data.intake):Math.max(0,Math.round(center-data.intake)))+' mL';
+  const k=data.temp>=35?'hot':data.temp>=30?'warm':'normal';
+  document.getElementById('conditionsResult').textContent=t(k);
+  document.getElementById('adviceResult').textContent=t('advice');
+}
+document.getElementById('manualMode').addEventListener('change',updateDemo);
+const detailKeys={problem:['problem','descP'],solution:['solution','descS'],features:['features','descF'],technology:['technology','descT'],market:['market','descM'],validation:['validation','descV']};const modal=document.getElementById('infoModal');const close=document.getElementById('closeInfo');let prev=null;
+function openDetail(key){activeDetail=key;const [head,desc]=detailKeys[key];document.getElementById('infoTitle').textContent=t(head);document.getElementById('infoDescription').textContent=t(desc);document.getElementById('infoNotice').textContent=t('tip');modal.classList.add('open');document.body.style.overflow='hidden';close.focus();}
+document.querySelectorAll('.detail-open').forEach(btn=>btn.addEventListener('click',()=>{prev=btn;openDetail(btn.dataset.id)}));function closeDetail(){modal.classList.remove('open');document.body.style.overflow='';activeDetail=null;prev?.focus()}close.addEventListener('click',closeDetail);modal.addEventListener('click',e=>{if(e.target===modal)closeDetail()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&activeDetail)closeDetail()});
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+const visual=document.getElementById('heroVisual');if(matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches){visual.addEventListener('mousemove',e=>{const r=visual.getBoundingClientRect();visual.style.transform=`rotateY(${((e.clientX-r.left)/r.width-.5)*9}deg) rotateX(${((e.clientY-r.top)/r.height-.5)*-9}deg)`});visual.addEventListener('mouseleave',()=>visual.style.transform='none')}
+renderAll();</script></body></html>
