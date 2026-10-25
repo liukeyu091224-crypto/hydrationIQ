@@ -3,690 +3,712 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071727">
-<title>Hydration IQ | Hydration, Smarter.</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydration IQ | Hydration, Reimagined</title>
 <style>
 :root {
-  --bg:#071727;
-  --surface:#10253b;
-  --line:#2a455c;
-  --ink:#f3faff;
-  --muted:#b5c8d8;
-  --accent:#65d5ee;
-  --soft:#12354a;
+  --bg:#07111f;
+  --panel:#10233b;
+  --blue:#7de1ff;
+  --purple:#9395ff;
+  --text:#f2f8ff;
+  --muted:#afc0d7;
+  --line:#29415a;
 }
-
-* {box-sizing:border-box}
-
-html {scroll-behavior:smooth}
-
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
   margin:0;
-  font-family:Inter,-apple-system,BlinkMacSystemFont,
-    "Segoe UI",sans-serif;
   background:var(--bg);
-  color:var(--ink);
-  line-height:1.6;
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  line-height:1.7;
 }
-
-a {color:inherit;text-decoration:none}
-button {font:inherit;cursor:pointer}
-
-header {
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 15%,
+      #1a4a7555,transparent 40%),
+    radial-gradient(circle at 85% 45%,
+      #433d8450,transparent 35%);
+}
+a { color:inherit; text-decoration:none; }
+button, input { font:inherit; }
+button { cursor:pointer; }
+nav {
   position:sticky;
   top:0;
-  z-index:10;
-  background:#071727ee;
-  backdrop-filter:blur(12px);
+  z-index:20;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 6%;
+  background:#07111fe8;
+  backdrop-filter:blur(15px);
   border-bottom:1px solid var(--line);
 }
-
-nav {
-  max-width:1100px;
-  margin:auto;
-  padding:17px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.logo {
-  font-size:19px;
-  font-weight:800;
-  letter-spacing:.06em;
-}
-
-.logo span {color:var(--accent)}
-
-.navlinks {
-  display:flex;
-  gap:22px;
-  flex-wrap:wrap;
-}
-
-.navlinks a {
-  font-size:14px;
-  color:var(--muted);
-}
-
-.navlinks a:hover,
-.navlinks a:focus-visible {
-  color:var(--accent);
-}
-
-main {
-  max-width:1100px;
-  margin:auto;
-  padding:0 24px;
-}
-
+.logo { font-weight:800; font-size:20px; }
+.logo span { color:var(--blue); }
+.links { display:flex; gap:20px; }
+.links a { color:var(--muted); font-size:14px; }
+.links a:hover { color:var(--blue); }
+.container { max-width:1150px; margin:auto; padding:0 22px; }
 .hero {
-  padding:115px 0 90px;
-  max-width:810px;
-}
-
-.eyebrow {
-  text-transform:uppercase;
-  letter-spacing:.2em;
-  color:var(--accent);
-  font-size:12px;
-  font-weight:750;
-}
-
-.hero h1 {
-  font-size:clamp(46px,8vw,90px);
-  line-height:1.06;
-  letter-spacing:-.055em;
-  margin:18px 0;
-}
-
-.hero p {
-  font-size:clamp(17px,2vw,21px);
-  color:var(--muted);
-  max-width:680px;
-}
-
-.actions {
-  display:flex;
-  gap:12px;
-  margin-top:30px;
-  flex-wrap:wrap;
-}
-
-.btn {
-  border:1px solid var(--accent);
-  background:var(--accent);
-  color:#072332;
-  border-radius:12px;
-  padding:12px 20px;
-  font-weight:750;
-  display:inline-block;
-}
-
-.btn.secondary {
-  background:transparent;
-  color:var(--accent);
-}
-
-.btn:hover {filter:brightness(1.09)}
-
-section {
-  padding:52px 0 72px;
-  scroll-margin-top:88px;
-}
-
-h2 {
-  font-size:clamp(29px,4vw,43px);
-  line-height:1.2;
-  letter-spacing:-.035em;
-  margin:8px 0 14px;
-}
-
-.lead {
-  color:var(--muted);
-  max-width:740px;
-  margin-bottom:30px;
-}
-
-.grid {
+  min-height:85vh;
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:17px;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
-
-.card {
-  width:100%;
-  background:linear-gradient(155deg,#14334b,#102338);
+.tag {
+  color:var(--blue);
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+h1 {
+  font-size:clamp(48px,7vw,90px);
+  line-height:1.05;
+  letter-spacing:-3px;
+  margin:20px 0;
+}
+.gradient {
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+p { color:var(--muted); }
+.btn {
+  display:inline-block;
+  padding:13px 23px;
+  margin:12px 10px 0 0;
+  border-radius:12px;
+  background:var(--blue);
+  color:#07111f;
+  border:0;
+  font-weight:bold;
+  transition:.2s;
+}
+.btn:hover { transform:translateY(-4px); }
+.btn.outline {
+  background:transparent;
+  color:var(--blue);
+  border:1px solid var(--blue);
+}
+.visual {
+  aspect-ratio:1;
+  border-radius:32px;
   border:1px solid var(--line);
-  border-radius:20px;
-  text-align:left;
-  padding:28px;
+  background:radial-gradient(circle,#214a70,#081629 70%);
+  display:grid;
+  place-items:center;
+  transition:transform .2s;
+  perspective:1000px;
+}
+.ring {
+  width:65%;
+  aspect-ratio:1;
+  border-radius:50%;
+  border:20px solid var(--blue);
+  box-shadow:0 0 55px #6bdcff65,
+             inset 0 0 35px #6bdcff40;
   display:flex;
   flex-direction:column;
-  min-height:235px;
-  color:var(--ink);
-  transition:transform .2s,border-color .2s;
-}
-
-.card:hover,
-.card:focus-visible {
-  transform:translateY(-4px);
-  border-color:var(--accent);
-  outline:none;
-}
-
-.glyph {font-size:28px}
-
-.card h3 {
-  font-size:22px;
-  margin:20px 0 7px;
-}
-
-.card p {
-  color:var(--muted);
-  font-size:14px;
-  margin:0;
-}
-
-.more {
-  margin-top:auto;
-  padding-top:18px;
-  font-size:13px;
-  font-weight:700;
-  color:var(--accent);
-}
-
-.panel {
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:30px;
-}
-
-.panel p,.panel li {color:var(--muted)}
-.panel ul {padding-left:21px}
-
-footer {
-  margin-top:40px;
-  padding:32px 24px;
-  text-align:center;
-  color:var(--muted);
-  border-top:1px solid var(--line);
-  font-size:13px;
-}
-
-.detail {
-  display:none;
-  max-width:860px;
-  margin:0 auto;
-  padding:70px 0 110px;
-}
-
-.detail.active {display:block}
-
-.detail h1 {
-  font-size:clamp(34px,5vw,58px);
-  letter-spacing:-.04em;
-  margin:14px 0;
-}
-
-.detail p,.detail li {color:var(--muted)}
-
-.detail h2 {
-  font-size:26px;
-  margin-top:34px;
-}
-
-.detail ul {padding-left:23px}
-
-.back {
-  display:inline-flex;
-  gap:8px;
+  justify-content:center;
   align-items:center;
-  border:0;
-  color:var(--accent);
-  background:none;
-  padding:0;
-  font-weight:700;
+  transform:rotate(-16deg);
+  text-align:center;
 }
-
-.notice {
-  border-left:3px solid var(--accent);
-  background:var(--soft);
-  padding:16px 20px;
-  border-radius:8px;
-  margin:24px 0;
+.ring strong { font-size:45px; }
+.ring small { color:var(--muted); }
+section { padding:90px 0; scroll-margin-top:80px; }
+h2 {
+  font-size:clamp(32px,4vw,49px);
+  letter-spacing:-1px;
+  line-height:1.15;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+.card,.panel {
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:23px;
+  padding:27px;
+}
+.card {
+  min-height:220px;
+  text-align:left;
+  color:var(--text);
+  transition:transform .25s,border-color .25s;
+}
+.card:hover {
+  transform:translateY(-8px);
+  border-color:var(--blue);
+}
+.card .symbol { font-size:30px; color:var(--blue); }
+.card h3 { font-size:22px; margin:16px 0 7px; }
+.card p { font-size:14px; }
+.card b { color:var(--blue); }
+.demo {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:35px;
+}
+.tabs { display:flex; flex-wrap:wrap; gap:8px; }
+.tab {
+  padding:10px 15px;
+  border-radius:30px;
+  border:1px solid var(--line);
+  background:transparent;
   color:var(--muted);
 }
-
-.hide {display:none!important}
-
-@media(max-width:750px) {
-  .grid {grid-template-columns:1fr}
-  .navlinks {gap:12px}
-  .navlinks a {font-size:12px}
-  .hero {padding:80px 0 55px}
-  .card {min-height:190px}
-  nav {align-items:flex-start;flex-direction:column}
-  .detail {padding-top:35px}
+.tab.active {
+  background:var(--blue);
+  color:#07111f;
+}
+.control { margin-top:25px; }
+.control label {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+input[type=range] {
+  width:100%;
+  accent-color:var(--blue);
+}
+.result {
+  padding:20px;
+  background:#162e49;
+  border-radius:16px;
+  margin-bottom:15px;
+}
+.result strong {
+  display:block;
+  margin:8px 0;
+  font-size:26px;
+}
+.notice {
+  color:var(--muted);
+  border-left:3px solid var(--blue);
+  padding:12px 15px;
+  font-size:13px;
+  background:#17324a;
+  border-radius:5px;
+}
+.steps { display:grid; gap:17px; }
+.step {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:22px;
+}
+.step strong { color:var(--blue); }
+footer {
+  text-align:center;
+  padding:35px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+}
+.modal {
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:#020914d9;
+  backdrop-filter:blur(10px);
+}
+.modal.open { display:flex; }
+.modal-content {
+  width:min(720px,100%);
+  max-height:85vh;
+  overflow:auto;
+  border-radius:25px;
+  padding:30px;
+  background:#10233b;
+  border:1px solid var(--line);
+}
+.close {
+  float:right;
+  background:transparent;
+  color:white;
+  border:0;
+  font-size:25px;
+}
+.modal-content li { color:var(--muted); margin:8px 0; }
+.reveal {
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s,transform .8s;
+}
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+@media(max-width:800px) {
+  .hero,.demo,.grid { grid-template-columns:1fr; }
+  .hero { padding:60px 0; }
+  nav { flex-wrap:wrap; gap:10px; }
+  .links { gap:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+  .reveal { opacity:1; transform:none; }
 }
 </style>
 </head>
 
 <body>
+<nav>
+  <a class="logo" href="#home">HYDRATION<span>IQ</span></a>
+  <div class="links">
+    <a href="#explore">Explore</a>
+    <a href="#demo">Demo</a>
+    <a href="#roadmap">Roadmap</a>
+  </div>
+</nav>
 
-<header>
-  <nav>
-    <a class="logo" href="#home">
-      HYDRATION<span>IQ</span>
-    </a>
-
-    <div class="navlinks">
-      <a href="#home">Home</a>
-      <a href="#explore">Explore</a>
-      <a href="#about">About</a>
+<main class="container">
+  <section class="hero" id="home">
+    <div>
+      <div class="tag">Student Innovation Project</div>
+      <h1>Hydration,<br><span class="gradient">reimagined.</span></h1>
+      <p>
+        Smarter hydration guidance for active lives.
+        Built around your activity, environment,
+        and daily routine.
+      </p>
+      <a class="btn" href="#demo">Try the Demo</a>
+      <a class="btn outline" href="#explore">Explore Our Idea</a>
     </div>
-  </nav>
-</header>
 
-<main>
+    <div class="visual" id="productVisual">
+      <div class="ring">
+        <strong>HIQ</strong>
+        <small>SMART HYDRATION<br>CONCEPT</small>
+      </div>
+    </div>
+  </section>
 
-<div id="homepage">
+  <section id="explore" class="reveal">
+    <div class="tag">Discover</div>
+    <h2>Explore Hydration IQ</h2>
+    <p>Click any module to learn more.</p>
 
-<section class="hero" id="home">
-  <div class="eyebrow">A student innovation concept</div>
+    <div class="grid">
+      <button class="card" data-page="problem">
+        <div class="symbol">◎</div>
+        <h3>The Problem</h3>
+        <p>Why traditional hydration planning can be inconvenient.</p>
+        <b>Explore →</b>
+      </button>
 
-  <h1>Hydration,<br>smarter.</h1>
+      <button class="card" data-page="solution">
+        <div class="symbol">◇</div>
+        <h3>Our Solution</h3>
+        <p>Personalized guidance based on activities and conditions.</p>
+        <b>Explore →</b>
+      </button>
 
-  <p>
-    Hydration IQ explores more practical, personalized
-    hydration guidance for active lives — based on
-    training context, environmental conditions,
-    and individual habits.
-  </p>
+      <button class="card" data-page="features">
+        <div class="symbol">✦</div>
+        <h3>Core Features</h3>
+        <p>Discover the tools behind our product concept.</p>
+        <b>Explore →</b>
+      </button>
 
-  <div class="actions">
-    <a class="btn" href="#explore">
-      Explore the concept ↓
-    </a>
-    <a class="btn secondary" href="#about">
-      Our mission
-    </a>
-  </div>
-</section>
+      <button class="card" data-page="technology">
+        <div class="symbol">⌁</div>
+        <h3>Technology</h3>
+        <p>Explore how our proposed system could work.</p>
+        <b>Explore →</b>
+      </button>
 
-<section id="explore">
-  <div class="eyebrow">Discover Hydration IQ</div>
-  <h2>Explore our project</h2>
+      <button class="card" data-page="market">
+        <div class="symbol">↗</div>
+        <h3>Target Market</h3>
+        <p>Learn who we want to serve and why.</p>
+        <b>Explore →</b>
+      </button>
 
-  <p class="lead">
-    Select any module to open a dedicated page
-    with more information.
-  </p>
+      <button class="card" data-page="innovation">
+        <div class="symbol">✧</div>
+        <h3>Innovation</h3>
+        <p>What makes our approach worth researching?</p>
+        <b>Explore →</b>
+      </button>
+    </div>
+  </section>
 
-  <div class="grid">
-
-    <a class="card" href="#details/problem">
-      <span class="glyph">◎</span>
-      <h3>The Problem</h3>
-      <p>
-        Why hydration planning can be difficult
-        during sports and training.
-      </p>
-      <span class="more">Explore problem →</span>
-    </a>
-
-    <a class="card" href="#details/solution">
-      <span class="glyph">◇</span>
-      <h3>Our Solution</h3>
-      <p>
-        How we want to turn activity and context
-        into actionable guidance.
-      </p>
-      <span class="more">Explore solution →</span>
-    </a>
-
-    <a class="card" href="#details/features">
-      <span class="glyph">◉</span>
-      <h3>Core Features</h3>
-      <p>
-        Pre-training planning, session tracking,
-        and individual insights.
-      </p>
-      <span class="more">Explore features →</span>
-    </a>
-
-    <a class="card" href="#details/technology">
-      <span class="glyph">⌁</span>
-      <h3>Technology</h3>
-      <p>
-        How a wearable-connected prediction system
-        could work.
-      </p>
-      <span class="more">Explore technology →</span>
-    </a>
-
-    <a class="card" href="#details/market">
-      <span class="glyph">↗</span>
-      <h3>Target Market</h3>
-      <p>
-        Who we aim to serve and what makes
-        the concept accessible.
-      </p>
-      <span class="more">Explore customers →</span>
-    </a>
-
-    <a class="card" href="#details/roadmap">
-      <span class="glyph">✦</span>
-      <h3>Our Roadmap</h3>
-      <p>
-        The prototype, testing, and validation
-        milestones ahead.
-      </p>
-      <span class="more">Explore roadmap →</span>
-    </a>
-
-  </div>
-</section>
-
-<section id="about">
-  <div class="panel">
-    <div class="eyebrow">Our mission</div>
-    <h2>Make hydration guidance easier to use.</h2>
-
+  <section id="demo" class="reveal">
+    <div class="tag">Interactive Experience</div>
+    <h2>Hydration IQ Demo</h2>
     <p>
-      Hydration IQ is a student-led concept developed
-      for an innovation challenge. We want to explore
-      whether guidance that fits people's actual
-      training schedules can be more useful than
-      generic reminders.
+      Change the activity and environment to see how
+      personalized guidance could respond.
     </p>
 
-    <p>
-      We are developing and evaluating this idea.
-      Product features and outcomes described on this
-      site are proposed unless explicitly identified
-      as tested.
-    </p>
-  </div>
-</section>
+    <div class="demo">
+      <div class="panel">
+        <h3>Customize Your Session</h3>
+        <div class="tabs">
+          <button class="tab active" data-sport="running">Running</button>
+          <button class="tab" data-sport="tennis">Tennis</button>
+          <button class="tab" data-sport="soccer">Soccer</button>
+          <button class="tab" data-sport="gym">Workout</button>
+        </div>
 
-</div>
+        <div class="control">
+          <label>Duration <span id="durationText">60 min</span></label>
+          <input type="range" id="duration" min="20" max="150"
+                 step="5" value="60">
+        </div>
 
-<div id="detail" class="detail" aria-live="polite">
-  <a class="back" href="#explore">
-    ← Back to all modules
-  </a>
-  <div id="detailcontent"></div>
-</div>
+        <div class="control">
+          <label>Temperature <span id="tempText">25°C</span></label>
+          <input type="range" id="temp" min="10" max="40"
+                 value="25">
+        </div>
 
+        <div class="control">
+          <label>Humidity <span id="humidityText">50%</span></label>
+          <input type="range" id="humidity" min="20" max="90"
+                 value="50">
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Your Session Insights</h3>
+
+        <div class="result">
+          <small>Selected activity</small>
+          <strong id="sportResult">Running</strong>
+        </div>
+
+        <div class="result">
+          <small>Training conditions</small>
+          <strong id="conditionResult">Mild conditions</strong>
+        </div>
+
+        <div class="result">
+          <small>Suggested planning focus</small>
+          <strong id="guidanceResult">Routine hydration planning</strong>
+          <p id="detailResult">
+            Keep water accessible and follow your thirst.
+          </p>
+        </div>
+
+        <div class="notice">
+          Concept demonstration only. These inputs cannot
+          determine someone's exact fluid loss or
+          dehydration level. This is not medical advice.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="reveal">
+    <div class="tag">What's Next</div>
+    <h2>Development Roadmap</h2>
+    <div class="steps">
+      <div class="step">
+        <strong>01 — Research</strong>
+        <p>Interview potential users and analyze competing products.</p>
+      </div>
+      <div class="step">
+        <strong>02 — Build</strong>
+        <p>Develop an interactive prototype and reminder system.</p>
+      </div>
+      <div class="step">
+        <strong>03 — Test</strong>
+        <p>Compare adaptive and traditional reminders with users.</p>
+      </div>
+      <div class="step">
+        <strong>04 — Improve</strong>
+        <p>Refine usability and validate stronger claims before release.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  © <span id="year"></span> Hydration IQ
-  · Student Innovation Project · Concept website
+  Hydration IQ · Conrad Challenge Student Innovation Concept
 </footer>
+
+<div class="modal" id="modal" role="dialog"
+     aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-content">
+    <button class="close" id="closeModal"
+            aria-label="Close dialog">×</button>
+    <div class="tag">Hydration IQ</div>
+    <h2 id="modalTitle"></h2>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 <script>
 const pages = {
   problem: {
-    tag: "The challenge",
-    title: "The Problem",
-    html: `
-      <p>
-        People's hydration needs vary across exercise
-        sessions, environments, and individuals.
-        Yet generic reminders often ignore the
-        realities of training.
-      </p>
-
-      <h2>Training is not always flexible</h2>
-      <p>
-        Athletes may only have opportunities to drink
-        during scheduled breaks or between drills.
-        A reminder that arrives at the wrong moment
-        may not be actionable.
-      </p>
-
-      <h2>Why it matters</h2>
+    title:"The Problem",
+    content:`
+      <p>Hydration needs vary between people and activities,
+      but many hydration reminders follow a fixed schedule.</p>
       <ul>
-        <li>Activity intensity and environmental conditions affect sweat loss.</li>
-        <li>Different people respond differently to similar workouts.</li>
-        <li>Many people do not track drinking habits consistently.</li>
+        <li>Training may limit access to water breaks.</li>
+        <li>Environmental conditions change throughout the day.</li>
+        <li>Individuals differ in activity and hydration habits.</li>
+        <li>Generic reminders may arrive at inconvenient times.</li>
       </ul>
-
-      <div class="notice">
-        Our goal is to make guidance fit the user's
-        actual routine, not to claim every athlete
-        has the same needs.
-      </div>
-    `
+      <p>We want to make hydration planning more practical.</p>`
   },
 
   solution: {
-    tag: "The proposed approach",
-    title: "Our Solution",
-    html: `
-      <p>
-        Hydration IQ is a proposed hydration planning
-        platform that combines workout information,
-        available wearable signals, environmental
-        data, and voluntary user feedback.
-      </p>
-
-      <h2>Before a session</h2>
-      <p>
-        Users select their sport, approximate duration,
-        and possible water-break opportunities.
-      </p>
-
-      <h2>During a session</h2>
-      <p>
-        The system could update context-aware prompts
-        using activity and environmental changes,
-        when data are available.
-      </p>
-
-      <h2>After a session</h2>
-      <p>
-        Users can review their records, report how
-        useful the reminders were, and plan future
-        sessions.
-      </p>
-
-      <div class="notice">
-        The initial system would estimate
-        hydration-related needs. It would not directly
-        measure the body's dehydration percentage
-        or replace medical advice.
-      </div>
-    `
+    title:"Our Solution",
+    content:`
+      <p>Hydration IQ is a proposed personalized
+      hydration management system.</p>
+      <ul>
+        <li>Choose a sport and training duration.</li>
+        <li>Consider temperature and humidity.</li>
+        <li>Plan reminders around available breaks.</li>
+        <li>Record water intake and personal feedback.</li>
+        <li>Review previous sessions.</li>
+      </ul>`
   },
 
   features: {
-    tag: "Product experience",
-    title: "Core Features",
-    html: `
-      <h2>1. Training-aware plans</h2>
-      <p>
-        Optional sport, workout duration, and
-        scheduled breaks help place reminders
-        at more useful times.
-      </p>
-
-      <h2>2. Activity and environment context</h2>
-      <p>
-        Activity data and weather information can
-        influence the timing of prompts.
-      </p>
-
-      <h2>3. Drinking and feedback log</h2>
-      <p>
-        Users can log beverages and tell the system
-        whether a reminder was timely or unnecessary.
-      </p>
-
-      <h2>4. Personal history</h2>
-      <p>
-        Past sessions and user preferences are
-        organized to support future plans.
-      </p>
-
-      <h2>5. Data confidence</h2>
-      <p>
-        Estimated information is labeled clearly,
-        and missing inputs are not represented
-        as precise measurements.
-      </p>
-    `
+    title:"Core Features",
+    content:`
+      <ul>
+        <li><b>Activity Awareness:</b>
+        recognizes relevant activity information.</li>
+        <li><b>Adaptive Reminders:</b>
+        adjusts reminder timing to user context.</li>
+        <li><b>Session Planning:</b>
+        supports different sports and training schedules.</li>
+        <li><b>Hydration History:</b>
+        records voluntary drinking information.</li>
+        <li><b>Personal Feedback:</b>
+        allows users to improve reminder preferences.</li>
+      </ul>
+      <p>These are proposed capabilities, not completed
+      or clinically validated features.</p>`
   },
 
   technology: {
-    tag: "Engineering concept",
-    title: "Technology",
-    html: `
-      <p>
-        Our proposed first version prioritizes
-        software and existing wearable devices
-        over creating an entirely new sensor.
-      </p>
-
-      <h2>Potential inputs</h2>
+    title:"Technology",
+    content:`
+      <p>Our early prototype combines software rules
+      and information from available devices.</p>
       <ul>
-        <li>Workout type, session duration, and planned breaks</li>
-        <li>Optional heart-rate and movement data from compatible devices</li>
-        <li>Local temperature and humidity information</li>
-        <li>User-entered drinking records and feedback</li>
+        <li>Activity type and exercise duration</li>
+        <li>Temperature and humidity</li>
+        <li>Optional compatible wearable data</li>
+        <li>Water intake records and user feedback</li>
       </ul>
-
-      <h2>Proposed processing</h2>
-      <p>
-        A rules-based prototype can first decide when
-        context-specific reminders might be appropriate.
-        Future models would require comparison against
-        reference measurements and real-world evaluation.
-      </p>
-
-      <div class="notice">
-        Heart rate, movement, and ambient temperature
-        alone cannot accurately measure total-body
-        water deficit. No clinically validated
-        dehydration measurement is claimed.
-      </div>
-    `
+      <p>Our first goal is to develop context-aware
+      hydration guidance, not to claim direct measurement
+      of body water loss.</p>`
   },
 
   market: {
-    tag: "Who we serve",
-    title: "Target Customers",
-    html: `
-      <h2>Initial audience</h2>
-      <p>
-        Student athletes and recreational exercisers
-        who manage training schedules and want
-        convenient, understandable hydration planning.
-      </p>
-
-      <h2>Possible expansion</h2>
-      <p>
-        Busy students, active adults, and fitness
-        communities may benefit if early testing
-        supports the need.
-      </p>
-
-      <h2>Business direction</h2>
-      <p>
-        We plan to investigate a free basic application
-        with optional advanced features. Any future
-        pricing will depend on user research
-        and actual costs.
-      </p>
-
-      <h2>What we need to validate</h2>
+    title:"Target Market",
+    content:`
+      <p>Our initial target market is student athletes
+      and recreational exercisers.</p>
       <ul>
-        <li>Do users find current reminders inconvenient?</li>
-        <li>Does sport-specific scheduling improve perceived usefulness?</li>
-        <li>Would users return to the product regularly?</li>
+        <li>High school sports participants</li>
+        <li>Runners and tennis players</li>
+        <li>Recreational fitness enthusiasts</li>
       </ul>
-    `
+      <p>Future expansion could include busy adults
+      who want more convenient hydration habits.
+      Market demand still needs to be validated.</p>`
   },
 
-  roadmap: {
-    tag: "Build and validate",
-    title: "Our Roadmap",
-    html: `
-      <h2>Phase 1 — Research</h2>
-      <p>
-        Interview potential users, review competing
-        products, and define a narrow initial use case.
-      </p>
-
-      <h2>Phase 2 — Interactive prototype</h2>
-      <p>
-        Create a functional scheduling and reminder
-        demo with manual inputs, without claiming
-        to sense dehydration.
-      </p>
-
-      <h2>Phase 3 — Pilot testing</h2>
-      <p>
-        Compare fixed-time reminders with training-aware
-        reminders. Measure usefulness, interruptions,
-        and user experience with appropriate consent.
-      </p>
-
-      <h2>Phase 4 — Iterate</h2>
-      <p>
-        Refine the experience based on results.
-        Only introduce stronger hydration or sweat-loss
-        claims after suitable scientific validation.
-      </p>
-    `
+  innovation: {
+    title:"Our Innovation Direction",
+    content:`
+      <p>Instead of focusing only on the amount of
+      water consumed, Hydration IQ investigates how
+      guidance can fit real training conditions.</p>
+      <ul>
+        <li>Context-aware reminder scheduling</li>
+        <li>Sport-specific water-break planning</li>
+        <li>Feedback that reduces unnecessary notifications</li>
+        <li>Clear communication of estimation uncertainty</li>
+      </ul>
+      <p>Our research goal is to test whether adaptive
+      reminders are more useful than fixed-time reminders.
+      These functions are not claimed to be unique
+      inventions without further competitor research.</p>`
   }
 };
 
-function render() {
-  let match = location.hash.match(/^#details\/([a-z]+)$/);
-  let page = match && pages[match[1]];
+const modal = document.getElementById("modal");
+const title = document.getElementById("modalTitle");
+const body = document.getElementById("modalBody");
+const close = document.getElementById("closeModal");
+let previousFocus = null;
 
-  document.getElementById("homepage")
-    .classList.toggle("hide", !!page);
+document.querySelectorAll("[data-page]").forEach(card => {
+  card.addEventListener("click", () => {
+    previousFocus = document.activeElement;
+    const page = pages[card.dataset.page];
+    title.textContent = page.title;
+    body.innerHTML = page.content;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    close.focus();
+  });
+});
 
-  document.getElementById("detail")
-    .classList.toggle("active", !!page);
-
-  if (page) {
-    document.getElementById("detailcontent").innerHTML = `
-      <p class="eyebrow">${page.tag}</p>
-      <h1>${page.title}</h1>
-      <div class="panel">${page.html}</div>
-    `;
-
-    document.title = page.title + " | Hydration IQ";
-    window.scrollTo(0, 0);
-
-  } else {
-    document.title = "Hydration IQ | Hydration, Smarter.";
-
-    if (location.hash === "#explore" ||
-        location.hash === "#about") {
-      requestAnimationFrame(() =>
-        document.querySelector(location.hash)?.scrollIntoView()
-      );
-    }
+function closeDialog() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+  previousFocus?.focus();
+}
+close.addEventListener("click",closeDialog);
+modal.addEventListener("click",event => {
+  if (event.target === modal) closeDialog();
+});
+document.addEventListener("keydown",event => {
+  if (event.key === "Escape") closeDialog();
+  if (event.key === "Tab" && modal.classList.contains("open")) {
+    event.preventDefault();
+    close.focus();
   }
+});
+
+let sport = "running";
+const names = {
+  running:"Running",
+  tennis:"Tennis",
+  soccer:"Soccer",
+  gym:"Workout"
+};
+
+const duration = document.getElementById("duration");
+const temp = document.getElementById("temp");
+const humidity = document.getElementById("humidity");
+
+function updateDemo() {
+  const minutes = Number(duration.value);
+  const temperature = Number(temp.value);
+  const rh = Number(humidity.value);
+
+  document.getElementById("durationText").textContent =
+    minutes + " min";
+  document.getElementById("tempText").textContent =
+    temperature + "°C";
+  document.getElementById("humidityText").textContent =
+    rh + "%";
+  document.getElementById("sportResult").textContent =
+    names[sport];
+
+  const hot = temperature >= 30;
+  const humid = rh >= 75;
+  const long = minutes >= 90;
+
+  let condition = "Mild conditions";
+  if (hot || humid) condition = "More demanding conditions";
+  if (hot && humid) condition = "Hot and humid conditions";
+
+  let guidance = "Routine hydration planning";
+  let detail =
+    "Keep water available and respond to your thirst.";
+
+  if (hot || humid || long) {
+    guidance = "Plan regular opportunities to check in";
+    detail =
+      "Consider the environment, activity, and available breaks. " +
+      "Monitor how you feel during the session.";
+  }
+
+  if (sport === "tennis") {
+    detail += " Use appropriate breaks between games or sets.";
+  } else if (sport === "soccer") {
+    detail += " Consider planned team water breaks.";
+  } else if (sport === "running") {
+    detail += " Plan where water will be accessible on your route.";
+  } else {
+    detail += " Use natural rest periods between exercises.";
+  }
+
+  document.getElementById("conditionResult").textContent =
+    condition;
+  document.getElementById("guidanceResult").textContent =
+    guidance;
+  document.getElementById("detailResult").textContent =
+    detail;
 }
 
-window.addEventListener("hashchange", render);
+document.querySelectorAll("[data-sport]").forEach(button => {
+  button.addEventListener("click", () => {
+    sport = button.dataset.sport;
+    document.querySelectorAll(".tab").forEach(b =>
+      b.classList.remove("active")
+    );
+    button.classList.add("active");
+    updateDemo();
+  });
+});
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+[duration,temp,humidity].forEach(slider =>
+  slider.addEventListener("input",updateDemo)
+);
+updateDemo();
 
-render();
+// Scroll animation
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.1});
+
+  document.querySelectorAll(".reveal").forEach(el =>
+    observer.observe(el)
+  );
+} else {
+  document.querySelectorAll(".reveal").forEach(el =>
+    el.classList.add("visible")
+  );
+}
+
+// Interactive hero
+const visual = document.getElementById("productVisual");
+if (matchMedia("(pointer:fine) and (prefers-reduced-motion:no-preference)").matches) {
+  visual.addEventListener("mousemove",event => {
+    const rect = visual.getBoundingClientRect();
+    const x = (event.clientX-rect.left)/rect.width-.5;
+    const y = (event.clientY-rect.top)/rect.height-.5;
+    visual.style.transform =
+      `perspective(900px) rotateY(${x*10}deg) rotateX(${-y*10}deg)`;
+  });
+  visual.addEventListener("mouseleave",() => {
+    visual.style.transform = "none";
+  });
+}
 </script>
-
 </body>
 </html>
