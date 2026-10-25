@@ -2,81 +2,691 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hydration IQ</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5fbff;
-      color: #18334b;
-      text-align: center;
-    }
-    nav {
-      padding: 24px;
-      font-weight: bold;
-      font-size: 22px;
-    }
-    .hero {
-      padding: 110px 20px;
-      background: linear-gradient(135deg, #dff5ff, #ffffff);
-    }
-    h1 { font-size: 56px; margin-bottom: 12px; }
-    p { line-height: 1.7; }
-    .hero p { font-size: 20px; }
-    section { padding: 65px 20px; }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      width: 230px;
-      box-shadow: 0 5px 20px #dcecf5;
-    }
-    footer { padding: 25px; background: #e3f3fc; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071727">
+<title>Hydration IQ | Hydration, Smarter.</title>
+
+<style>
+:root {
+  --bg:#071727;
+  --surface:#10253b;
+  --line:#2a455c;
+  --ink:#f3faff;
+  --muted:#b5c8d8;
+  --accent:#65d5ee;
+  --soft:#12354a;
+}
+
+* {box-sizing:border-box}
+
+html {scroll-behavior:smooth}
+
+body {
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,
+    "Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+}
+
+a {color:inherit;text-decoration:none}
+button {font:inherit;cursor:pointer}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#071727ee;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+nav {
+  max-width:1100px;
+  margin:auto;
+  padding:17px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo {
+  font-size:19px;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+
+.logo span {color:var(--accent)}
+
+.navlinks {
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.navlinks a {
+  font-size:14px;
+  color:var(--muted);
+}
+
+.navlinks a:hover,
+.navlinks a:focus-visible {
+  color:var(--accent);
+}
+
+main {
+  max-width:1100px;
+  margin:auto;
+  padding:0 24px;
+}
+
+.hero {
+  padding:115px 0 90px;
+  max-width:810px;
+}
+
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:750;
+}
+
+.hero h1 {
+  font-size:clamp(46px,8vw,90px);
+  line-height:1.06;
+  letter-spacing:-.055em;
+  margin:18px 0;
+}
+
+.hero p {
+  font-size:clamp(17px,2vw,21px);
+  color:var(--muted);
+  max-width:680px;
+}
+
+.actions {
+  display:flex;
+  gap:12px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.btn {
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:#072332;
+  border-radius:12px;
+  padding:12px 20px;
+  font-weight:750;
+  display:inline-block;
+}
+
+.btn.secondary {
+  background:transparent;
+  color:var(--accent);
+}
+
+.btn:hover {filter:brightness(1.09)}
+
+section {
+  padding:52px 0 72px;
+  scroll-margin-top:88px;
+}
+
+h2 {
+  font-size:clamp(29px,4vw,43px);
+  line-height:1.2;
+  letter-spacing:-.035em;
+  margin:8px 0 14px;
+}
+
+.lead {
+  color:var(--muted);
+  max-width:740px;
+  margin-bottom:30px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:17px;
+}
+
+.card {
+  width:100%;
+  background:linear-gradient(155deg,#14334b,#102338);
+  border:1px solid var(--line);
+  border-radius:20px;
+  text-align:left;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  min-height:235px;
+  color:var(--ink);
+  transition:transform .2s,border-color .2s;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  outline:none;
+}
+
+.glyph {font-size:28px}
+
+.card h3 {
+  font-size:22px;
+  margin:20px 0 7px;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
+.more {
+  margin-top:auto;
+  padding-top:18px;
+  font-size:13px;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.panel {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px;
+}
+
+.panel p,.panel li {color:var(--muted)}
+.panel ul {padding-left:21px}
+
+footer {
+  margin-top:40px;
+  padding:32px 24px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  font-size:13px;
+}
+
+.detail {
+  display:none;
+  max-width:860px;
+  margin:0 auto;
+  padding:70px 0 110px;
+}
+
+.detail.active {display:block}
+
+.detail h1 {
+  font-size:clamp(34px,5vw,58px);
+  letter-spacing:-.04em;
+  margin:14px 0;
+}
+
+.detail p,.detail li {color:var(--muted)}
+
+.detail h2 {
+  font-size:26px;
+  margin-top:34px;
+}
+
+.detail ul {padding-left:23px}
+
+.back {
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  border:0;
+  color:var(--accent);
+  background:none;
+  padding:0;
+  font-weight:700;
+}
+
+.notice {
+  border-left:3px solid var(--accent);
+  background:var(--soft);
+  padding:16px 20px;
+  border-radius:8px;
+  margin:24px 0;
+  color:var(--muted);
+}
+
+.hide {display:none!important}
+
+@media(max-width:750px) {
+  .grid {grid-template-columns:1fr}
+  .navlinks {gap:12px}
+  .navlinks a {font-size:12px}
+  .hero {padding:80px 0 55px}
+  .card {min-height:190px}
+  nav {align-items:flex-start;flex-direction:column}
+  .detail {padding-top:35px}
+}
+</style>
 </head>
+
 <body>
-  <nav>HYDRATION IQ</nav>
 
-  <div class="hero">
-    <h1>Hydration, Smarter.</h1>
-    <p>Personalized hydration guidance for everyday life.</p>
-    <p>Designed for a healthier, more informed future.</p>
-  </div>
+<header>
+  <nav>
+    <a class="logo" href="#home">
+      HYDRATION<span>IQ</span>
+    </a>
 
-  <section>
-    <h2>The Problem</h2>
-    <p>Hydration needs vary with activity, environment,
-       and individual habits.</p>
-  </section>
-
-  <section>
-    <h2>Our Solution</h2>
-    <div class="features">
-      <div class="card">
-        <h3>Activity Awareness</h3>
-        <p>Understand daily activity patterns.</p>
-      </div>
-      <div class="card">
-        <h3>Smart Guidance</h3>
-        <p>Get context-aware hydration reminders.</p>
-      </div>
-      <div class="card">
-        <h3>Personal Insights</h3>
-        <p>Track hydration habits over time.</p>
-      </div>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#explore">Explore</a>
+      <a href="#about">About</a>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <footer>
-    Hydration IQ | Student Innovation Project
-  </footer>
+<main>
+
+<div id="homepage">
+
+<section class="hero" id="home">
+  <div class="eyebrow">A student innovation concept</div>
+
+  <h1>Hydration,<br>smarter.</h1>
+
+  <p>
+    Hydration IQ explores more practical, personalized
+    hydration guidance for active lives — based on
+    training context, environmental conditions,
+    and individual habits.
+  </p>
+
+  <div class="actions">
+    <a class="btn" href="#explore">
+      Explore the concept ↓
+    </a>
+    <a class="btn secondary" href="#about">
+      Our mission
+    </a>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="eyebrow">Discover Hydration IQ</div>
+  <h2>Explore our project</h2>
+
+  <p class="lead">
+    Select any module to open a dedicated page
+    with more information.
+  </p>
+
+  <div class="grid">
+
+    <a class="card" href="#details/problem">
+      <span class="glyph">◎</span>
+      <h3>The Problem</h3>
+      <p>
+        Why hydration planning can be difficult
+        during sports and training.
+      </p>
+      <span class="more">Explore problem →</span>
+    </a>
+
+    <a class="card" href="#details/solution">
+      <span class="glyph">◇</span>
+      <h3>Our Solution</h3>
+      <p>
+        How we want to turn activity and context
+        into actionable guidance.
+      </p>
+      <span class="more">Explore solution →</span>
+    </a>
+
+    <a class="card" href="#details/features">
+      <span class="glyph">◉</span>
+      <h3>Core Features</h3>
+      <p>
+        Pre-training planning, session tracking,
+        and individual insights.
+      </p>
+      <span class="more">Explore features →</span>
+    </a>
+
+    <a class="card" href="#details/technology">
+      <span class="glyph">⌁</span>
+      <h3>Technology</h3>
+      <p>
+        How a wearable-connected prediction system
+        could work.
+      </p>
+      <span class="more">Explore technology →</span>
+    </a>
+
+    <a class="card" href="#details/market">
+      <span class="glyph">↗</span>
+      <h3>Target Market</h3>
+      <p>
+        Who we aim to serve and what makes
+        the concept accessible.
+      </p>
+      <span class="more">Explore customers →</span>
+    </a>
+
+    <a class="card" href="#details/roadmap">
+      <span class="glyph">✦</span>
+      <h3>Our Roadmap</h3>
+      <p>
+        The prototype, testing, and validation
+        milestones ahead.
+      </p>
+      <span class="more">Explore roadmap →</span>
+    </a>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="panel">
+    <div class="eyebrow">Our mission</div>
+    <h2>Make hydration guidance easier to use.</h2>
+
+    <p>
+      Hydration IQ is a student-led concept developed
+      for an innovation challenge. We want to explore
+      whether guidance that fits people's actual
+      training schedules can be more useful than
+      generic reminders.
+    </p>
+
+    <p>
+      We are developing and evaluating this idea.
+      Product features and outcomes described on this
+      site are proposed unless explicitly identified
+      as tested.
+    </p>
+  </div>
+</section>
+
+</div>
+
+<div id="detail" class="detail" aria-live="polite">
+  <a class="back" href="#explore">
+    ← Back to all modules
+  </a>
+  <div id="detailcontent"></div>
+</div>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Hydration IQ
+  · Student Innovation Project · Concept website
+</footer>
+
+<script>
+const pages = {
+  problem: {
+    tag: "The challenge",
+    title: "The Problem",
+    html: `
+      <p>
+        People's hydration needs vary across exercise
+        sessions, environments, and individuals.
+        Yet generic reminders often ignore the
+        realities of training.
+      </p>
+
+      <h2>Training is not always flexible</h2>
+      <p>
+        Athletes may only have opportunities to drink
+        during scheduled breaks or between drills.
+        A reminder that arrives at the wrong moment
+        may not be actionable.
+      </p>
+
+      <h2>Why it matters</h2>
+      <ul>
+        <li>Activity intensity and environmental conditions affect sweat loss.</li>
+        <li>Different people respond differently to similar workouts.</li>
+        <li>Many people do not track drinking habits consistently.</li>
+      </ul>
+
+      <div class="notice">
+        Our goal is to make guidance fit the user's
+        actual routine, not to claim every athlete
+        has the same needs.
+      </div>
+    `
+  },
+
+  solution: {
+    tag: "The proposed approach",
+    title: "Our Solution",
+    html: `
+      <p>
+        Hydration IQ is a proposed hydration planning
+        platform that combines workout information,
+        available wearable signals, environmental
+        data, and voluntary user feedback.
+      </p>
+
+      <h2>Before a session</h2>
+      <p>
+        Users select their sport, approximate duration,
+        and possible water-break opportunities.
+      </p>
+
+      <h2>During a session</h2>
+      <p>
+        The system could update context-aware prompts
+        using activity and environmental changes,
+        when data are available.
+      </p>
+
+      <h2>After a session</h2>
+      <p>
+        Users can review their records, report how
+        useful the reminders were, and plan future
+        sessions.
+      </p>
+
+      <div class="notice">
+        The initial system would estimate
+        hydration-related needs. It would not directly
+        measure the body's dehydration percentage
+        or replace medical advice.
+      </div>
+    `
+  },
+
+  features: {
+    tag: "Product experience",
+    title: "Core Features",
+    html: `
+      <h2>1. Training-aware plans</h2>
+      <p>
+        Optional sport, workout duration, and
+        scheduled breaks help place reminders
+        at more useful times.
+      </p>
+
+      <h2>2. Activity and environment context</h2>
+      <p>
+        Activity data and weather information can
+        influence the timing of prompts.
+      </p>
+
+      <h2>3. Drinking and feedback log</h2>
+      <p>
+        Users can log beverages and tell the system
+        whether a reminder was timely or unnecessary.
+      </p>
+
+      <h2>4. Personal history</h2>
+      <p>
+        Past sessions and user preferences are
+        organized to support future plans.
+      </p>
+
+      <h2>5. Data confidence</h2>
+      <p>
+        Estimated information is labeled clearly,
+        and missing inputs are not represented
+        as precise measurements.
+      </p>
+    `
+  },
+
+  technology: {
+    tag: "Engineering concept",
+    title: "Technology",
+    html: `
+      <p>
+        Our proposed first version prioritizes
+        software and existing wearable devices
+        over creating an entirely new sensor.
+      </p>
+
+      <h2>Potential inputs</h2>
+      <ul>
+        <li>Workout type, session duration, and planned breaks</li>
+        <li>Optional heart-rate and movement data from compatible devices</li>
+        <li>Local temperature and humidity information</li>
+        <li>User-entered drinking records and feedback</li>
+      </ul>
+
+      <h2>Proposed processing</h2>
+      <p>
+        A rules-based prototype can first decide when
+        context-specific reminders might be appropriate.
+        Future models would require comparison against
+        reference measurements and real-world evaluation.
+      </p>
+
+      <div class="notice">
+        Heart rate, movement, and ambient temperature
+        alone cannot accurately measure total-body
+        water deficit. No clinically validated
+        dehydration measurement is claimed.
+      </div>
+    `
+  },
+
+  market: {
+    tag: "Who we serve",
+    title: "Target Customers",
+    html: `
+      <h2>Initial audience</h2>
+      <p>
+        Student athletes and recreational exercisers
+        who manage training schedules and want
+        convenient, understandable hydration planning.
+      </p>
+
+      <h2>Possible expansion</h2>
+      <p>
+        Busy students, active adults, and fitness
+        communities may benefit if early testing
+        supports the need.
+      </p>
+
+      <h2>Business direction</h2>
+      <p>
+        We plan to investigate a free basic application
+        with optional advanced features. Any future
+        pricing will depend on user research
+        and actual costs.
+      </p>
+
+      <h2>What we need to validate</h2>
+      <ul>
+        <li>Do users find current reminders inconvenient?</li>
+        <li>Does sport-specific scheduling improve perceived usefulness?</li>
+        <li>Would users return to the product regularly?</li>
+      </ul>
+    `
+  },
+
+  roadmap: {
+    tag: "Build and validate",
+    title: "Our Roadmap",
+    html: `
+      <h2>Phase 1 — Research</h2>
+      <p>
+        Interview potential users, review competing
+        products, and define a narrow initial use case.
+      </p>
+
+      <h2>Phase 2 — Interactive prototype</h2>
+      <p>
+        Create a functional scheduling and reminder
+        demo with manual inputs, without claiming
+        to sense dehydration.
+      </p>
+
+      <h2>Phase 3 — Pilot testing</h2>
+      <p>
+        Compare fixed-time reminders with training-aware
+        reminders. Measure usefulness, interruptions,
+        and user experience with appropriate consent.
+      </p>
+
+      <h2>Phase 4 — Iterate</h2>
+      <p>
+        Refine the experience based on results.
+        Only introduce stronger hydration or sweat-loss
+        claims after suitable scientific validation.
+      </p>
+    `
+  }
+};
+
+function render() {
+  let match = location.hash.match(/^#details\/([a-z]+)$/);
+  let page = match && pages[match[1]];
+
+  document.getElementById("homepage")
+    .classList.toggle("hide", !!page);
+
+  document.getElementById("detail")
+    .classList.toggle("active", !!page);
+
+  if (page) {
+    document.getElementById("detailcontent").innerHTML = `
+      <p class="eyebrow">${page.tag}</p>
+      <h1>${page.title}</h1>
+      <div class="panel">${page.html}</div>
+    `;
+
+    document.title = page.title + " | Hydration IQ";
+    window.scrollTo(0, 0);
+
+  } else {
+    document.title = "Hydration IQ | Hydration, Smarter.";
+
+    if (location.hash === "#explore" ||
+        location.hash === "#about") {
+      requestAnimationFrame(() =>
+        document.querySelector(location.hash)?.scrollIntoView()
+      );
+    }
+  }
+}
+
+window.addEventListener("hashchange", render);
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+render();
+</script>
+
 </body>
 </html>
