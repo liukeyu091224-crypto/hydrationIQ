@@ -1,714 +1,1000 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hydration IQ | Hydration, Reimagined</title>
-<style>
-:root {
-  --bg:#07111f;
-  --panel:#10233b;
-  --blue:#7de1ff;
-  --purple:#9395ff;
-  --text:#f2f8ff;
-  --muted:#afc0d7;
-  --line:#29415a;
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,sans-serif;
-  line-height:1.7;
-}
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  background:
-    radial-gradient(circle at 20% 15%,
-      #1a4a7555,transparent 40%),
-    radial-gradient(circle at 85% 45%,
-      #433d8450,transparent 35%);
-}
-a { color:inherit; text-decoration:none; }
-button, input { font:inherit; }
-button { cursor:pointer; }
-nav {
-  position:sticky;
-  top:0;
-  z-index:20;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 6%;
-  background:#07111fe8;
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
-}
-.logo { font-weight:800; font-size:20px; }
-.logo span { color:var(--blue); }
-.links { display:flex; gap:20px; }
-.links a { color:var(--muted); font-size:14px; }
-.links a:hover { color:var(--blue); }
-.container { max-width:1150px; margin:auto; padding:0 22px; }
-.hero {
-  min-height:85vh;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-}
-.tag {
-  color:var(--blue);
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-weight:bold;
-}
-h1 {
-  font-size:clamp(48px,7vw,90px);
-  line-height:1.05;
-  letter-spacing:-3px;
-  margin:20px 0;
-}
-.gradient {
-  background:linear-gradient(90deg,var(--blue),var(--purple));
-  background-clip:text;
-  -webkit-background-clip:text;
-  color:transparent;
-}
-p { color:var(--muted); }
-.btn {
-  display:inline-block;
-  padding:13px 23px;
-  margin:12px 10px 0 0;
-  border-radius:12px;
-  background:var(--blue);
-  color:#07111f;
-  border:0;
-  font-weight:bold;
-  transition:.2s;
-}
-.btn:hover { transform:translateY(-4px); }
-.btn.outline {
-  background:transparent;
-  color:var(--blue);
-  border:1px solid var(--blue);
-}
-.visual {
-  aspect-ratio:1;
-  border-radius:32px;
-  border:1px solid var(--line);
-  background:radial-gradient(circle,#214a70,#081629 70%);
-  display:grid;
-  place-items:center;
-  transition:transform .2s;
-  perspective:1000px;
-}
-.ring {
-  width:65%;
-  aspect-ratio:1;
-  border-radius:50%;
-  border:20px solid var(--blue);
-  box-shadow:0 0 55px #6bdcff65,
-             inset 0 0 35px #6bdcff40;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  transform:rotate(-16deg);
-  text-align:center;
-}
-.ring strong { font-size:45px; }
-.ring small { color:var(--muted); }
-section { padding:90px 0; scroll-margin-top:80px; }
-h2 {
-  font-size:clamp(32px,4vw,49px);
-  letter-spacing:-1px;
-  line-height:1.15;
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:35px;
-}
-.card,.panel {
-  border:1px solid var(--line);
-  background:var(--panel);
-  border-radius:23px;
-  padding:27px;
-}
-.card {
-  min-height:220px;
-  text-align:left;
-  color:var(--text);
-  transition:transform .25s,border-color .25s;
-}
-.card:hover {
-  transform:translateY(-8px);
-  border-color:var(--blue);
-}
-.card .symbol { font-size:30px; color:var(--blue); }
-.card h3 { font-size:22px; margin:16px 0 7px; }
-.card p { font-size:14px; }
-.card b { color:var(--blue); }
-.demo {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  margin-top:35px;
-}
-.tabs { display:flex; flex-wrap:wrap; gap:8px; }
-.tab {
-  padding:10px 15px;
-  border-radius:30px;
-  border:1px solid var(--line);
-  background:transparent;
-  color:var(--muted);
-}
-.tab.active {
-  background:var(--blue);
-  color:#07111f;
-}
-.control { margin-top:25px; }
-.control label {
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:10px;
-}
-input[type=range] {
-  width:100%;
-  accent-color:var(--blue);
-}
-.result {
-  padding:20px;
-  background:#162e49;
-  border-radius:16px;
-  margin-bottom:15px;
-}
-.result strong {
-  display:block;
-  margin:8px 0;
-  font-size:26px;
-}
-.notice {
-  color:var(--muted);
-  border-left:3px solid var(--blue);
-  padding:12px 15px;
-  font-size:13px;
-  background:#17324a;
-  border-radius:5px;
-}
-.steps { display:grid; gap:17px; }
-.step {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:22px;
-}
-.step strong { color:var(--blue); }
-footer {
-  text-align:center;
-  padding:35px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-}
-.modal {
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  background:#020914d9;
-  backdrop-filter:blur(10px);
-}
-.modal.open { display:flex; }
-.modal-content {
-  width:min(720px,100%);
-  max-height:85vh;
-  overflow:auto;
-  border-radius:25px;
-  padding:30px;
-  background:#10233b;
-  border:1px solid var(--line);
-}
-.close {
-  float:right;
-  background:transparent;
-  color:white;
-  border:0;
-  font-size:25px;
-}
-.modal-content li { color:var(--muted); margin:8px 0; }
-.reveal {
-  opacity:0;
-  transform:translateY(35px);
-  transition:opacity .8s,transform .8s;
-}
-.reveal.visible {
-  opacity:1;
-  transform:translateY(0);
-}
-@media(max-width:800px) {
-  .hero,.demo,.grid { grid-template-columns:1fr; }
-  .hero { padding:60px 0; }
-  nav { flex-wrap:wrap; gap:10px; }
-  .links { gap:12px; }
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    animation:none!important;
-    transition:none!important;
-    scroll-behavior:auto!important;
-  }
-  .reveal { opacity:1; transform:none; }
-}
-</style>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <title>Hydration IQ | Interactive Concept Website</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-2: #0b1730;
+      --panel: rgba(17, 31, 56, 0.72);
+      --panel-solid: #0f1d35;
+      --line: rgba(142, 189, 255, 0.16);
+      --ink: #f4f9ff;
+      --muted: #a7bad7;
+      --accent: #77e3ff;
+      --accent-2: #8a8dff;
+      --good: #8ef6c9;
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --nav-h: 76px;
+    }
 
-<body>
-<nav>
-  <a class="logo" href="#home">HYDRATION<span>IQ</span></a>
-  <div class="links">
-    <a href="#explore">Explore</a>
-    <a href="#demo">Demo</a>
-    <a href="#roadmap">Roadmap</a>
-  </div>
-</nav>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(93,173,255,0.14), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(128,120,255,0.16), transparent 28%),
+        linear-gradient(180deg, #07111f 0%, #081529 46%, #06101e 100%);
+      overflow-x: hidden;
+    }
 
-<main class="container">
-  <section class="hero" id="home">
-    <div>
-      <div class="tag">Student Innovation Project</div>
-      <h1>Hydration,<br><span class="gradient">reimagined.</span></h1>
-      <p>
-        Smarter hydration guidance for active lives.
-        Built around your activity, environment,
-        and daily routine.
-      </p>
-      <a class="btn" href="#demo">Try the Demo</a>
-      <a class="btn outline" href="#explore">Explore Our Idea</a>
-    </div>
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
 
-    <div class="visual" id="productVisual">
-      <div class="ring">
-        <strong>HIQ</strong>
-        <small>SMART HYDRATION<br>CONCEPT</small>
-      </div>
-    </div>
-  </section>
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .glow {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .28;
+      animation: floatGlow 15s ease-in-out infinite;
+    }
+    .glow.one { top: -120px; left: -100px; background: #5dc4ff; }
+    .glow.two { top: 180px; right: -120px; background: #746eff; animation-delay: -5s; }
+    .glow.three { bottom: -160px; left: 35%; background: #2bdfff; animation-delay: -10s; }
 
-  <section id="explore" class="reveal">
-    <div class="tag">Discover</div>
-    <h2>Explore Hydration IQ</h2>
-    <p>Click any module to learn more.</p>
+    @keyframes floatGlow {
+      0%,100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(0,-20px,0) scale(1.08); }
+    }
 
-    <div class="grid">
-      <button class="card" data-page="problem">
-        <div class="symbol">◎</div>
-        <h3>The Problem</h3>
-        <p>Why traditional hydration planning can be inconvenient.</p>
-        <b>Explore →</b>
-      </button>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 14, 27, 0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      height: var(--nav-h);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: .02em;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .95rem;
+      transition: .2s ease;
+    }
+    .nav-links a:hover { color: var(--ink); }
 
-      <button class="card" data-page="solution">
-        <div class="symbol">◇</div>
-        <h3>Our Solution</h3>
-        <p>Personalized guidance based on activities and conditions.</p>
-        <b>Explore →</b>
-      </button>
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-      <button class="card" data-page="features">
-        <div class="symbol">✦</div>
-        <h3>Core Features</h3>
-        <p>Discover the tools behind our product concept.</p>
-        <b>Explore →</b>
-      </button>
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 36px;
+      min-height: calc(100vh - var(--nav-h));
+      padding: 48px 0 56px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: .8rem;
+      color: #cae8ff;
+      background: rgba(119,227,255,.09);
+      border: 1px solid rgba(119,227,255,.18);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6.4rem);
+      line-height: .95;
+      letter-spacing: -0.06em;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #b0e3ff 42%, #8a8dff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      margin: 22px 0 0;
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 640px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      box-shadow: var(--shadow);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      background: linear-gradient(90deg, #7be2ff, #7e8dff);
+      color: #05111b;
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,.05);
+      color: var(--ink);
+      border-color: rgba(255,255,255,.08);
+      box-shadow: none;
+    }
 
-      <button class="card" data-page="technology">
-        <div class="symbol">⌁</div>
-        <h3>Technology</h3>
-        <p>Explore how our proposed system could work.</p>
-        <b>Explore →</b>
-      </button>
+    .hero-visual-wrap {
+      perspective: 1200px;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-visual {
+      position: relative;
+      width: min(520px, 100%);
+      aspect-ratio: 0.95/1;
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(17,34,62,.88), rgba(8,18,34,.9));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 25px 70px rgba(0,0,0,.4);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform .18s ease;
+    }
+    .hero-visual::before,
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: .4;
+    }
+    .hero-visual::before {
+      width: 220px; height: 220px; background: rgba(78, 222, 255, .24); top: -50px; right: -40px;
+    }
+    .hero-visual::after {
+      width: 260px; height: 260px; background: rgba(123, 104, 255, .2); bottom: -80px; left: -60px;
+    }
+    .product-ring {
+      position: absolute;
+      left: 50%; top: 46%;
+      transform: translate(-50%, -50%) translateZ(40px);
+      width: 68%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      border: 20px solid rgba(120, 196, 255, 0.9);
+      box-shadow:
+        inset 0 0 0 9px rgba(255,255,255,.15),
+        0 0 32px rgba(103, 209, 255, .35),
+        0 0 80px rgba(103, 209, 255, .16);
+      background: radial-gradient(circle at 40% 30%, rgba(255,255,255,.18), transparent 35%),
+                  radial-gradient(circle at 60% 70%, rgba(152,110,255,.15), transparent 26%),
+                  linear-gradient(180deg, rgba(14,28,52,.6), rgba(8,15,28,.88));
+    }
+    .ring-core {
+      position: absolute;
+      inset: 20%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(119,227,255,.26), rgba(9,15,27,.9) 60%);
+      border: 1px solid rgba(255,255,255,.08);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 16px;
+    }
+    .ring-core strong { display: block; font-size: 2.2rem; letter-spacing: -0.04em; }
+    .ring-core span { color: var(--muted); font-size: .95rem; }
 
-      <button class="card" data-page="market">
-        <div class="symbol">↗</div>
-        <h3>Target Market</h3>
-        <p>Learn who we want to serve and why.</p>
-        <b>Explore →</b>
-      </button>
+    .floating-card {
+      position: absolute;
+      min-width: 180px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(11, 23, 47, .75);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      transform: translateZ(48px);
+    }
+    .floating-card small {
+      display: block;
+      color: #b8d9f5;
+      opacity: .9;
+      margin-bottom: 8px;
+      font-size: .75rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .floating-card strong { font-size: 1.5rem; letter-spacing: -0.04em; }
+    .floating-card span { color: var(--muted); font-size: .88rem; display: block; margin-top: 4px; }
+    .card-a { top: 30px; left: 26px; }
+    .card-b { right: 22px; bottom: 34px; }
+    .pulse-dot {
+      width: 10px; height: 10px; border-radius: 50%; background: var(--good); display: inline-block; margin-right: 8px;
+      box-shadow: 0 0 0 0 rgba(142,246,201,.65); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(142,246,201,.55); }
+      70% { box-shadow: 0 0 0 12px rgba(142,246,201,0); }
+      100% { box-shadow: 0 0 0 0 rgba(142,246,201,0); }
+    }
 
-      <button class="card" data-page="innovation">
-        <div class="symbol">✧</div>
-        <h3>Innovation</h3>
-        <p>What makes our approach worth researching?</p>
-        <b>Explore →</b>
-      </button>
-    </div>
-  </section>
+    .section {
+      padding: 90px 0;
+    }
+    .section-head {
+      margin-bottom: 26px;
+    }
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .76rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+    .section p.lead {
+      max-width: 760px;
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
 
-  <section id="demo" class="reveal">
-    <div class="tag">Interactive Experience</div>
-    <h2>Hydration IQ Demo</h2>
-    <p>
-      Change the activity and environment to see how
-      personalized guidance could respond.
-    </p>
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: .2s ease;
+      min-height: 220px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -35% auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(119,227,255,.18), transparent 70%);
+      pointer-events: none;
+      transition: transform .25s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(119,227,255,.28);
+      box-shadow: var(--shadow);
+    }
+    .card:hover::after { transform: scale(1.15); }
+    .card .icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(180deg, rgba(119,227,255,.15), rgba(138,141,255,.11));
+      border: 1px solid rgba(255,255,255,.08);
+      font-size: 1.35rem;
+    }
+    .card h3 {
+      margin: 18px 0 10px;
+      font-size: 1.28rem;
+      letter-spacing: -.03em;
+    }
+    .card p { color: var(--muted); margin: 0; }
+    .card .more {
+      margin-top: 16px;
+      color: var(--accent);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .95rem;
+    }
 
-    <div class="demo">
-      <div class="panel">
-        <h3>Customize Your Session</h3>
-        <div class="tabs">
-          <button class="tab active" data-sport="running">Running</button>
-          <button class="tab" data-sport="tennis">Tennis</button>
-          <button class="tab" data-sport="soccer">Soccer</button>
-          <button class="tab" data-sport="gym">Workout</button>
-        </div>
+    .demo-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+    .sport-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .sport-btn {
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+    .sport-btn.active {
+      background: linear-gradient(90deg, rgba(119,227,255,.18), rgba(138,141,255,.16));
+      color: var(--ink);
+      border-color: rgba(119,227,255,.28);
+    }
+    .sport-btn { display:inline-flex; align-items:center; gap:9px; padding:8px 13px 8px 7px; }
+    .sport-art { width:42px; height:42px; flex:none; border-radius:50%; background:white; box-shadow:0 2px 12px rgba(0,0,0,.18); }
+    .demo-form-title {margin:0 0 16px;font-size:1.35rem;}
+    .option-label {display:flex;align-items:center;gap:8px;cursor:pointer;}
+    .option-label input {accent-color:#77e3ff;width:17px;height:17px;}
+    .optional-note {font-size:.76rem;color:var(--muted);font-weight:400;}
+    .small-value {font-size:clamp(1.25rem,2.3vw,1.9rem)!important;}
+    input[type="range"]:disabled {opacity:.3;cursor:not-allowed;}
+    @media(max-width:640px) {.sport-btn {flex:1 1 44%;justify-content:flex-start;}}
+    .control {
+      margin-top: 18px;
+    }
+    .control-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .control-head span:last-child {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #77e3ff;
+      cursor: pointer;
+    }
 
-        <div class="control">
-          <label>Duration <span id="durationText">60 min</span></label>
-          <input type="range" id="duration" min="20" max="150"
-                 step="5" value="60">
-        </div>
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .stat {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 20px;
+      padding: 18px;
+    }
+    .stat .label { color: var(--muted); font-size: .82rem; margin-bottom: 8px; }
+    .stat .value {
+      font-size: clamp(1.4rem, 2.8vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+    .stat .note {
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: .86rem;
+      line-height: 1.6;
+    }
+    .big-stat {
+      grid-column: 1 / -1;
+      background: linear-gradient(180deg, rgba(119,227,255,.08), rgba(255,255,255,.02));
+    }
+    .disclaimer {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.75;
+      border-left: 2px solid rgba(119,227,255,.25);
+      padding-left: 14px;
+    }
 
-        <div class="control">
-          <label>Temperature <span id="tempText">25°C</span></label>
-          <input type="range" id="temp" min="10" max="40"
-                 value="25">
-        </div>
+    .timeline {
+      display: grid;
+      gap: 16px;
+      margin-top: 34px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+    }
+    .step-no {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(119,227,255,.16), rgba(138,141,255,.15));
+      border: 1px solid rgba(255,255,255,.08);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .step h3 { margin: 0 0 8px; font-size: 1.18rem; }
+    .step p { margin: 0; color: var(--muted); }
 
-        <div class="control">
-          <label>Humidity <span id="humidityText">50%</span></label>
-          <input type="range" id="humidity" min="20" max="90"
-                 value="50">
-        </div>
-      </div>
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 7, 14, .72);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+    }
+    .modal.open { display: flex; }
+    .modal-card {
+      width: min(760px, 100%);
+      background: linear-gradient(180deg, rgba(13,26,48,.97), rgba(9,18,34,.98));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.45);
+      padding: 28px;
+      max-height: min(86vh, 860px);
+      overflow: auto;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--ink);
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .modal-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .76rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .modal h3 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -.05em;
+    }
+    .modal p, .modal li {
+      color: var(--muted);
+      line-height: 1.85;
+    }
+    .modal ul { padding-left: 20px; }
 
-      <div class="panel">
-        <h3>Your Session Insights</h3>
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        <div class="result">
-          <small>Selected activity</small>
-          <strong id="sportResult">Running</strong>
-        </div>
-
-        <div class="result">
-          <small>Training conditions</small>
-          <strong id="conditionResult">Mild conditions</strong>
-        </div>
-
-        <div class="result">
-          <small>Suggested planning focus</small>
-          <strong id="guidanceResult">Routine hydration planning</strong>
-          <p id="detailResult">
-            Keep water accessible and follow your thirst.
-          </p>
-        </div>
-
-        <div class="notice">
-          Concept demonstration only. These inputs cannot
-          determine someone's exact fluid loss or
-          dehydration level. This is not medical advice.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="roadmap" class="reveal">
-    <div class="tag">What's Next</div>
-    <h2>Development Roadmap</h2>
-    <div class="steps">
-      <div class="step">
-        <strong>01 — Research</strong>
-        <p>Interview potential users and analyze competing products.</p>
-      </div>
-      <div class="step">
-        <strong>02 — Build</strong>
-        <p>Develop an interactive prototype and reminder system.</p>
-      </div>
-      <div class="step">
-        <strong>03 — Test</strong>
-        <p>Compare adaptive and traditional reminders with users.</p>
-      </div>
-      <div class="step">
-        <strong>04 — Improve</strong>
-        <p>Refine usability and validate stronger claims before release.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  Hydration IQ · Conrad Challenge Student Innovation Concept
-</footer>
-
-<div class="modal" id="modal" role="dialog"
-     aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-content">
-    <button class="close" id="closeModal"
-            aria-label="Close dialog">×</button>
-    <div class="tag">Hydration IQ</div>
-    <h2 id="modalTitle"></h2>
-    <div id="modalBody"></div>
-  </div>
-</div>
-
-<script>
-const pages = {
-  problem: {
-    title:"The Problem",
-    content:`
-      <p>Hydration needs vary between people and activities,
-      but many hydration reminders follow a fixed schedule.</p>
-      <ul>
-        <li>Training may limit access to water breaks.</li>
-        <li>Environmental conditions change throughout the day.</li>
-        <li>Individuals differ in activity and hydration habits.</li>
-        <li>Generic reminders may arrive at inconvenient times.</li>
-      </ul>
-      <p>We want to make hydration planning more practical.</p>`
-  },
-
-  solution: {
-    title:"Our Solution",
-    content:`
-      <p>Hydration IQ is a proposed personalized
-      hydration management system.</p>
-      <ul>
-        <li>Choose a sport and training duration.</li>
-        <li>Consider temperature and humidity.</li>
-        <li>Plan reminders around available breaks.</li>
-        <li>Record water intake and personal feedback.</li>
-        <li>Review previous sessions.</li>
-      </ul>`
-  },
-
-  features: {
-    title:"Core Features",
-    content:`
-      <ul>
-        <li><b>Activity Awareness:</b>
-        recognizes relevant activity information.</li>
-        <li><b>Adaptive Reminders:</b>
-        adjusts reminder timing to user context.</li>
-        <li><b>Session Planning:</b>
-        supports different sports and training schedules.</li>
-        <li><b>Hydration History:</b>
-        records voluntary drinking information.</li>
-        <li><b>Personal Feedback:</b>
-        allows users to improve reminder preferences.</li>
-      </ul>
-      <p>These are proposed capabilities, not completed
-      or clinically validated features.</p>`
-  },
-
-  technology: {
-    title:"Technology",
-    content:`
-      <p>Our early prototype combines software rules
-      and information from available devices.</p>
-      <ul>
-        <li>Activity type and exercise duration</li>
-        <li>Temperature and humidity</li>
-        <li>Optional compatible wearable data</li>
-        <li>Water intake records and user feedback</li>
-      </ul>
-      <p>Our first goal is to develop context-aware
-      hydration guidance, not to claim direct measurement
-      of body water loss.</p>`
-  },
-
-  market: {
-    title:"Target Market",
-    content:`
-      <p>Our initial target market is student athletes
-      and recreational exercisers.</p>
-      <ul>
-        <li>High school sports participants</li>
-        <li>Runners and tennis players</li>
-        <li>Recreational fitness enthusiasts</li>
-      </ul>
-      <p>Future expansion could include busy adults
-      who want more convenient hydration habits.
-      Market demand still needs to be validated.</p>`
-  },
-
-  innovation: {
-    title:"Our Innovation Direction",
-    content:`
-      <p>Instead of focusing only on the amount of
-      water consumed, Hydration IQ investigates how
-      guidance can fit real training conditions.</p>
-      <ul>
-        <li>Context-aware reminder scheduling</li>
-        <li>Sport-specific water-break planning</li>
-        <li>Feedback that reduces unnecessary notifications</li>
-        <li>Clear communication of estimation uncertainty</li>
-      </ul>
-      <p>Our research goal is to test whether adaptive
-      reminders are more useful than fixed-time reminders.
-      These functions are not claimed to be unique
-      inventions without further competitor research.</p>`
-  }
-};
-
-const modal = document.getElementById("modal");
-const title = document.getElementById("modalTitle");
-const body = document.getElementById("modalBody");
-const close = document.getElementById("closeModal");
-let previousFocus = null;
-
-document.querySelectorAll("[data-page]").forEach(card => {
-  card.addEventListener("click", () => {
-    previousFocus = document.activeElement;
-    const page = pages[card.dataset.page];
-    title.textContent = page.title;
-    body.innerHTML = page.content;
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
-    close.focus();
-  });
-});
-
-function closeDialog() {
-  modal.classList.remove("open");
-  document.body.style.overflow = "";
-  previousFocus?.focus();
-}
-close.addEventListener("click",closeDialog);
-modal.addEventListener("click",event => {
-  if (event.target === modal) closeDialog();
-});
-document.addEventListener("keydown",event => {
-  if (event.key === "Escape") closeDialog();
-  if (event.key === "Tab" && modal.classList.contains("open")) {
-    event.preventDefault();
-    close.focus();
-  }
-});
-
-let sport = "running";
-const names = {
-  running:"Running",
-  tennis:"Tennis",
-  soccer:"Soccer",
-  gym:"Workout"
-};
-
-const duration = document.getElementById("duration");
-const temp = document.getElementById("temp");
-const humidity = document.getElementById("humidity");
-
-function updateDemo() {
-  const minutes = Number(duration.value);
-  const temperature = Number(temp.value);
-  const rh = Number(humidity.value);
-
-  document.getElementById("durationText").textContent =
-    minutes + " min";
-  document.getElementById("tempText").textContent =
-    temperature + "°C";
-  document.getElementById("humidityText").textContent =
-    rh + "%";
-  document.getElementById("sportResult").textContent =
-    names[sport];
-
-  const hot = temperature >= 30;
-  const humid = rh >= 75;
-  const long = minutes >= 90;
-
-  let condition = "Mild conditions";
-  if (hot || humid) condition = "More demanding conditions";
-  if (hot && humid) condition = "Hot and humid conditions";
-
-  let guidance = "Routine hydration planning";
-  let detail =
-    "Keep water available and respond to your thirst.";
-
-  if (hot || humid || long) {
-    guidance = "Plan regular opportunities to check in";
-    detail =
-      "Consider the environment, activity, and available breaks. " +
-      "Monitor how you feel during the session.";
-  }
-
-  if (sport === "tennis") {
-    detail += " Use appropriate breaks between games or sets.";
-  } else if (sport === "soccer") {
-    detail += " Consider planned team water breaks.";
-  } else if (sport === "running") {
-    detail += " Plan where water will be accessible on your route.";
-  } else {
-    detail += " Use natural rest periods between exercises.";
-  }
-
-  document.getElementById("conditionResult").textContent =
-    condition;
-  document.getElementById("guidanceResult").textContent =
-    guidance;
-  document.getElementById("detailResult").textContent =
-    detail;
-}
-
-document.querySelectorAll("[data-sport]").forEach(button => {
-  button.addEventListener("click", () => {
-    sport = button.dataset.sport;
-    document.querySelectorAll(".tab").forEach(b =>
-      b.classList.remove("active")
-    );
-    button.classList.add("active");
-    updateDemo();
-  });
-});
-
-[duration,temp,humidity].forEach(slider =>
-  slider.addEventListener("input",updateDemo)
-);
-updateDemo();
-
-// Scroll animation
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+    @media (max-width: 980px) {
+      .hero,
+      .demo-wrap,
+      .cards {
+        grid-template-columns: 1fr;
       }
+      .hero { gap: 26px; }
+      .hero-visual { width: min(620px, 100%); }
+      .cards { display: grid; }
+    }
+
+    @media (max-width: 640px) {
+      .nav { height: auto; padding-top: 18px; padding-bottom: 18px; align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 34px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+      .floating-card { min-width: 140px; padding: 12px; }
+      .card-a { left: 14px; top: 14px; }
+      .card-b { right: 14px; bottom: 14px; }
+      .results-grid { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; }
+      .step-no { width: 48px; height: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
+  </div>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="#home">Hydration<span>IQ</span></a>
+      <nav class="nav-links">
+        <a href="#concept">Concept</a>
+        <a href="#experience">Experience</a>
+        <a href="#demo">Demo</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="reveal show">
+        <div class="eyebrow">Interactive Startup Concept</div>
+        <h1>
+          Hydration,<br>
+          <span class="gradient-text">reimagined.</span>
+        </h1>
+        <p>
+          An immersive concept website for <strong>Hydration IQ</strong> — designed to feel more like a real tech product launch. Explore the problem, the solution, and a live demo that estimates hydration-related needs based on activity and environment.
+        </p>
+        <div class="hero-actions">
+          <a href="#demo" class="btn primary">Try interactive demo</a>
+          <a href="#concept" class="btn secondary">Explore concept</a>
+        </div>
+      </div>
+
+      <div class="hero-visual-wrap reveal show">
+        <div class="hero-visual" id="heroVisual">
+          <div class="floating-card card-a">
+            <small><span class="pulse-dot"></span>Session mode</small>
+            <strong>Live</strong>
+            <span>Adaptive guidance concept</span>
+          </div>
+
+          <div class="product-ring">
+            <div class="ring-core">
+              <div>
+                <strong>HIQ</strong>
+                <span>Hydration intelligence<br>for active lives</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card card-b">
+            <small>Estimated need</small>
+            <strong>+620 mL</strong>
+            <span>Example training suggestion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="concept">
+      <div class="section-head">
+        <div class="section-kicker">Explore the concept</div>
+        <h2>More than a static website.</h2>
+        <p class="lead">
+          Click each module to open a richer explanation, just like a real product showcase. This helps your Conrad Challenge website feel more polished, premium, and memorable.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card" data-modal="problem">
+          <div class="icon">◎</div>
+          <h3>The Problem</h3>
+          <p>Hydration guidance often ignores real training schedules, changing conditions, and individual differences.</p>
+          <div class="more">Open module →</div>
+        </article>
+
+        <article class="card" data-modal="solution">
+          <div class="icon">◇</div>
+          <h3>Our Solution</h3>
+          <p>Hydration IQ combines activity context, environment, and feedback to make reminders feel more useful.</p>
+          <div class="more">Open module →</div>
+        </article>
+
+        <article class="card" data-modal="features">
+          <div class="icon">✦</div>
+          <h3>Core Features</h3>
+          <p>Training-aware planning, interactive recommendations, session summaries, and personal history.</p>
+          <div class="more">Open module →</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="experience">
+      <div class="section-head">
+        <div class="section-kicker">Immersive experience</div>
+        <h2>Website modules that feel alive.</h2>
+        <p class="lead">
+          For a stronger impression, your website should let judges interact with the idea. Below is a built-in product demo that changes in real time when users switch sports or adjust training conditions.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card" data-modal="technology">
+          <div class="icon">⌁</div>
+          <h3>Technology</h3>
+          <p>See how wearable inputs, weather information, and behavior data could work together in a first prototype.</p>
+          <div class="more">Open module →</div>
+        </article>
+
+        <article class="card" data-modal="market">
+          <div class="icon">↗</div>
+          <h3>Target Market</h3>
+          <p>Start with student athletes and active young users, then validate expansion through testing.</p>
+          <div class="more">Open module →</div>
+        </article>
+
+        <article class="card" data-modal="roadmapInfo">
+          <div class="icon">▣</div>
+          <h3>Validation Plan</h3>
+          <p>Learn how the product could be tested through interviews, prototype trials, and feedback loops.</p>
+          <div class="more">Open module →</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="demo">
+      <div class="section-head">
+        <div class="section-kicker">Live interaction</div>
+        <h2>Try the Hydration IQ demo.</h2>
+        <p class="lead">
+          Try the proposed interface: select a sport, adjust your training profile and temperature, and optionally include humidity. Results are general planning prompts, not measurements of fluid loss.
+        </p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="panel">
+          <h3 class="demo-form-title">Customize Your Session</h3>
+          <div class="sport-tabs" id="sportTabs">
+            <button class="sport-btn active" type="button" data-sport="running" aria-pressed="true"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Running illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#D8F6FF"/><circle cx="29" cy="10" r="4" fill="#113E65"/><path d="M27 16l-8 7 7 5 7-4 M27 16l7 6 7 2 M26 28l-7 10-9 2 M26 28l7 9 8 2" stroke="#12608D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Running</span></button>
+            <button class="sport-btn " type="button" data-sport="tennis" aria-pressed="false"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Tennis illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#DFF5DE"/><g transform="rotate(-32 24 24)"><ellipse cx="23" cy="19" rx="10" ry="14" stroke="#1E6C55" stroke-width="3" fill="#F4FCF0"/><path d="M17 11h12M15 18h16M17 26h12M19 6v27M27 6v27" stroke="#9CCC8C" stroke-width="1"/><path d="M23 33v11" stroke="#85572F" stroke-width="4" stroke-linecap="round"/></g><circle cx="38" cy="12" r="5" fill="#C6EA43" stroke="#8FBA2C"/></svg><span>Tennis</span></button>
+            <button class="sport-btn " type="button" data-sport="soccer" aria-pressed="false"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Soccer illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#E6EEFF"/><circle cx="24" cy="24" r="16" fill="#fff" stroke="#355A82" stroke-width="1.6"/><path d="M24 16l7 5-3 8h-8l-3-8z" fill="#264B75"/><path d="M24 8v8M8 22l9-1M14 36l6-7M34 36l-6-7M40 22l-9-1" stroke="#264B75" stroke-width="2"/></svg><span>Soccer</span></button>
+            <button class="sport-btn " type="button" data-sport="gym" aria-pressed="false"><svg class="sport-art" viewBox="0 0 48 48" role="img" aria-label="Workout illustration" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#F1E7FF"/><path d="M10 24h28" stroke="#6852A7" stroke-width="4" stroke-linecap="round"/><rect x="9" y="17" width="6" height="14" rx="2" fill="#7153AB"/><rect x="16" y="19" width="5" height="10" rx="2" fill="#9A7BD2"/><rect x="33" y="17" width="6" height="14" rx="2" fill="#7153AB"/><rect x="27" y="19" width="5" height="10" rx="2" fill="#9A7BD2"/></svg><span>Workout</span></button>
+          </div>
+          <div class="control"><div class="control-head"><span>Session duration</span><span id="durationValue">60 min</span></div><input id="durationRange" type="range" min="20" max="150" step="5" value="60"></div>
+          <div class="control"><div class="control-head"><span>Weight <small class="optional-note">(profile only)</small></span><span id="weightValue">60 kg</span></div><input id="weightRange" type="range" min="35" max="110" step="1" value="60"></div>
+          <div class="control"><div class="control-head"><span>Height <small class="optional-note">(profile only)</small></span><span id="heightValue">165 cm</span></div><input id="heightRange" type="range" min="140" max="200" step="1" value="165"></div>
+          <div class="control"><div class="control-head"><span>Temperature</span><span id="tempValue">25°C</span></div><input id="tempRange" type="range" min="10" max="42" step="1" value="25"></div>
+          <div class="control"><div class="control-head"><label class="option-label"><input type="checkbox" id="includeHumidity"> Include humidity <small class="optional-note">(optional)</small></label><span id="humidityValue">Not included</span></div><input id="humidityRange" type="range" min="20" max="95" step="1" value="55" disabled></div>
+        </div>
+
+        <div class="panel">
+          <h3>Your Session Insights</h3>
+          <div class="results-grid">
+            <div class="stat"><div class="label">Selected activity</div><div class="value small-value" id="sportResult">Running</div></div>
+            <div class="stat"><div class="label">Body profile</div><div class="value small-value" id="bodyResult">60 kg · 165 cm</div><div class="note">Recorded for future personalization; not used to diagnose hydration.</div></div>
+            <div class="stat big-stat"><div class="label">Training conditions</div><div class="value small-value" id="conditionResult">Mild conditions</div></div>
+            <div class="stat big-stat"><div class="label">Suggested planning focus</div><div class="value small-value" id="summaryText">Routine hydration planning</div><div class="note" id="summaryNote">Keep water available and follow your thirst.</div></div>
+          </div>
+          <div class="disclaimer">
+            Concept demonstration only. The height and weight fields are for a sample profile, not a validated hydration calculation. No precise fluid loss, dehydration percentage, or medical diagnosis is provided.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="roadmap">
+      <div class="section-head">
+        <div class="section-kicker">Roadmap</div>
+        <h2>How the idea could evolve.</h2>
+        <p class="lead">
+          Judges usually want to see not only the idea, but how you plan to test and improve it. A clean roadmap makes your website look more serious and complete.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="step">
+          <div class="step-no">01</div>
+          <div>
+            <h3>User research</h3>
+            <p>Interview student athletes and active users to understand when hydration reminders actually feel useful.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">02</div>
+          <div>
+            <h3>Interactive prototype</h3>
+            <p>Build a testable concept with sport selection, environment inputs, and scheduling logic.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">03</div>
+          <div>
+            <h3>Pilot testing</h3>
+            <p>Compare training-aware reminders with fixed reminders and collect perceived usefulness and interruption data.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">04</div>
+          <div>
+            <h3>Iteration</h3>
+            <p>Refine the experience, clarify claims, and only strengthen the science after appropriate validation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-kicker" id="modalKicker"></div>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const modalContent = {
+      problem: {
+        kicker: 'The challenge',
+        title: 'The Problem',
+        body: `
+          <p>Current hydration tools often focus on general reminders or advanced sweat sensing for specific sports use. However, many people still struggle with something simpler: <strong>knowing when guidance is actually useful during real training</strong>.</p>
+          <ul>
+            <li>Training sessions may not allow water access at every moment.</li>
+            <li>Hydration needs change across temperature, humidity, and exercise type.</li>
+            <li>Users may ignore reminders that do not match their real context.</li>
+          </ul>
+          <p>Hydration IQ is meant to explore a more practical direction: adaptive guidance shaped by session context rather than generic timing alone.</p>
+        `
+      },
+      solution: {
+        kicker: 'The concept',
+        title: 'Our Solution',
+        body: `
+          <p>Hydration IQ combines activity context, environmental information, and user feedback into a more interactive planning experience.</p>
+          <ul>
+            <li><strong>Before a session:</strong> choose a sport and training duration.</li>
+            <li><strong>During a session:</strong> estimate hydration-related needs based on conditions.</li>
+            <li><strong>After a session:</strong> summarize the session and help improve future planning.</li>
+          </ul>
+          <p>The first value of the product is not claiming perfect physiological measurement — it is delivering a clearer, more useful experience.</p>
+        `
+      },
+      features: {
+        kicker: 'Inside the product',
+        title: 'Core Features',
+        body: `
+          <ul>
+            <li><strong>Sport selection:</strong> guidance changes by activity type.</li>
+            <li><strong>Interactive environment inputs:</strong> temperature and humidity influence the demo.</li>
+            <li><strong>Session summary:</strong> estimated loss and fluid suggestion after activity.</li>
+            <li><strong>Personal history direction:</strong> a path toward future personalization.</li>
+            <li><strong>Interactive website experience:</strong> product story told through clicks, motion, and live simulation.</li>
+          </ul>
+        `
+      },
+      technology: {
+        kicker: 'How it works',
+        title: 'Technology',
+        body: `
+          <p>This concept website presents a <strong>software-first</strong> approach. Instead of promising a clinically validated dehydration sensor, it demonstrates how data inputs could be combined in a future MVP.</p>
+          <ul>
+            <li>Workout type and session length</li>
+            <li>Ambient temperature and humidity</li>
+            <li>Potential heart-rate or activity information from a wearable</li>
+            <li>User-entered behavior and feedback</li>
+          </ul>
+          <p>The website is intentionally honest: it shows estimation and interaction, not direct medical measurement.</p>
+        `
+      },
+      market: {
+        kicker: 'Who it is for',
+        title: 'Target Market',
+        body: `
+          <p>The most realistic first audience is <strong>student athletes and active young users</strong>. They are easy to interview, easy to test with, and closely connected to school-based innovation programs.</p>
+          <ul>
+            <li>High school athletes</li>
+            <li>Tennis players, runners, soccer players</li>
+            <li>Recreational gym users</li>
+          </ul>
+          <p>Starting small makes the idea more believable and easier to validate.</p>
+        `
+      },
+      roadmapInfo: {
+        kicker: 'How to validate',
+        title: 'Validation Plan',
+        body: `
+          <p>A strong innovation website should also explain how the idea will be tested.</p>
+          <ul>
+            <li><strong>Interviews:</strong> learn how current hydration behavior works.</li>
+            <li><strong>Prototype tests:</strong> compare adaptive and fixed reminders.</li>
+            <li><strong>Experience evaluation:</strong> measure usefulness, clarity, and interruption level.</li>
+            <li><strong>Future science:</strong> only add stronger physiological claims after proper evidence.</li>
+          </ul>
+        `
+      }
+    };
+
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalKicker = document.getElementById('modalKicker');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('[data-modal]').forEach(card => {
+      card.addEventListener('click', () => {
+        const key = card.dataset.modal;
+        const content = modalContent[key];
+        modalTitle.textContent = content.title;
+        modalKicker.textContent = content.kicker;
+        modalBody.innerHTML = content.body;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
     });
-  },{threshold:0.1});
 
-  document.querySelectorAll(".reveal").forEach(el =>
-    observer.observe(el)
-  );
-} else {
-  document.querySelectorAll(".reveal").forEach(el =>
-    el.classList.add("visible")
-  );
-}
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal();
+    });
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
 
-// Interactive hero
-const visual = document.getElementById("productVisual");
-if (matchMedia("(pointer:fine) and (prefers-reduced-motion:no-preference)").matches) {
-  visual.addEventListener("mousemove",event => {
-    const rect = visual.getBoundingClientRect();
-    const x = (event.clientX-rect.left)/rect.width-.5;
-    const y = (event.clientY-rect.top)/rect.height-.5;
-    visual.style.transform =
-      `perspective(900px) rotateY(${x*10}deg) rotateX(${-y*10}deg)`;
-  });
-  visual.addEventListener("mouseleave",() => {
-    visual.style.transform = "none";
-  });
-}
-</script>
+    let currentSport = 'running';
+    const durationRange = document.getElementById('durationRange');
+    const tempRange = document.getElementById('tempRange');
+    const humidityRange = document.getElementById('humidityRange');
+    const weightRange = document.getElementById('weightRange');
+    const heightRange = document.getElementById('heightRange');
+    const includeHumidity = document.getElementById('includeHumidity');
+    const sportNames = {running:'Running',tennis:'Tennis',soccer:'Soccer',gym:'Workout'};
+
+    function updateDemo() {
+      const minutes = Number(durationRange.value);
+      const temp = Number(tempRange.value);
+      const humidity = Number(humidityRange.value);
+      const weight = Number(weightRange.value);
+      const height = Number(heightRange.value);
+      const useHumidity = includeHumidity.checked;
+      document.getElementById('durationValue').textContent = `${minutes} min`;
+      document.getElementById('tempValue').textContent = `${temp}°C`;
+      document.getElementById('weightValue').textContent = `${weight} kg`;
+      document.getElementById('heightValue').textContent = `${height} cm`;
+      document.getElementById('humidityValue').textContent = useHumidity ? `${humidity}%` : 'Not included';
+      humidityRange.disabled = !useHumidity;
+      document.getElementById('sportResult').textContent = sportNames[currentSport];
+      document.getElementById('bodyResult').textContent = `${weight} kg · ${height} cm`;
+
+      const hot = temp >= 30;
+      const veryHot = temp >= 35;
+      const humid = useHumidity && humidity >= 75;
+      const long = minutes >= 90;
+      let condition = veryHot ? 'Hot conditions' : hot ? 'Warm conditions' : 'Mild conditions';
+      if (hot && humid) condition = 'Hot and humid conditions';
+      else if (humid) condition = 'Humid conditions';
+      document.getElementById('conditionResult').textContent = condition;
+
+      let focus = 'Routine hydration planning';
+      let note = 'Keep water accessible and respond to your thirst.';
+      if (hot || long || humid) {
+        focus = 'Plan accessible water breaks';
+        note = 'Activity duration or environmental conditions may call for extra attention to water access and how you feel.';
+      }
+      if (veryHot || (hot && humid)) {
+        focus = 'Pay extra attention to heat conditions';
+        note = 'Consider rest and cooling opportunities, and monitor how you feel. This is not a dehydration diagnosis.';
+      }
+      const sportTips = {
+        running:' Plan access to water along your route.',
+        tennis:' Use permitted rest periods or changeovers.',
+        soccer:' Consider designated team water breaks.',
+        gym:' Use natural rest periods between sets.'
+      };
+      document.getElementById('summaryText').textContent = focus;
+      document.getElementById('summaryNote').textContent = note + sportTips[currentSport];
+    }
+    document.querySelectorAll('.sport-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sport-btn').forEach(b => {
+          b.classList.remove('active'); b.setAttribute('aria-pressed','false');
+        });
+        btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
+        currentSport = btn.dataset.sport;
+        updateDemo();
+      });
+    });
+    [durationRange,tempRange,humidityRange,weightRange,heightRange].forEach(el => el.addEventListener('input',updateDemo));
+    includeHumidity.addEventListener('change',updateDemo);
+    updateDemo();
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    const heroVisual = document.getElementById('heroVisual');
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 10;
+      const rotateX = ((y / rect.height) - 0.5) * -10;
+      heroVisual.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    heroVisual.addEventListener('mouseleave', () => {
+      heroVisual.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+  </script>
 </body>
 </html>
